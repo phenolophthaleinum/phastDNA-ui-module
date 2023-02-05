@@ -1,0 +1,290 @@
+:root {
+    /* --bs-primary: white; */
+    --bs-font-sans-serif: "Jost", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue"
+  }
+  
+  .icon-list li::before {
+    display: block;
+    flex-shrink: 0;
+    width: 1.5em;
+    height: 1.5em;
+    margin-right: .5rem;
+    content: "";
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23212529' viewBox='0 0 16 16'%3E%3Cpath d='M8 0a8 8 0 1 1 0 16A8 8 0 0 1 8 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z'/%3E%3C/svg%3E") no-repeat center center / 100% auto;
+  }
+   html, body{
+    font-size: 120%;
+    /* height: 100%; */
+    color: #40c3c2;
+   }
+  
+   body{
+    font-size: 120%;
+    /* height: 100%; */
+    color: #40c3c2;
+    --x: calc(var(--posX, 0) * 2px);
+    --y: calc(var(--posY, 0) * 2px);
+    background-image: 
+      /* original-ver */
+      /* linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), 
+      radial-gradient( 90% 100% at calc( 50% + var(--x)) calc( 0% + var(--y)), rgb(200 200 200), rgb(022 000 045)), 
+      radial-gradient(100% 100% at calc( 80% - var(--x)) calc( 0% - var(--y)), rgb(250 255 000), rgb(036 000 000)), 
+      radial-gradient(150% 210% at calc(100% + var(--x)) calc( 0% + var(--y)), rgb(020 175 125), rgb(000 010 255)), 
+      radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 077 000), rgb(000 200 255)), 
+      linear-gradient(60deg, rgb(255 000 000), rgb(120 086 255)); */
+      /* inverted red-yellow with blue */
+      /* linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), 
+      radial-gradient( 90% 100% at calc( 50% + var(--x)) calc( 0% + var(--y)), rgb(200 200 200), rgb(022 000 045)), 
+      radial-gradient(150% 210% at calc( 80% - var(--x)) calc( 0% - var(--y)), rgb(250 255 000), rgb(036 000 000)), 
+      radial-gradient(100% 100% at calc(100% + var(--x)) calc( 0% + var(--y)), rgb(020 175 125), rgb(000 010 255)), 
+      radial-gradient(150% 210% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 077 000), rgb(000 200 255)), 
+      linear-gradient(60deg, rgb(255 000 000), rgb(120 086 255)); */
+      /* idk */
+      /* linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), 
+      radial-gradient( 90% 100% at calc( 50% + var(--x)) calc( 0% + var(--y)), rgb(200 200 200), rgb(022 000 045)), 
+      radial-gradient(100% 100% at calc( 80% - var(--x)) calc( 0% - var(--y)), rgb(250 255 000), rgb(036 000 000)), 
+      radial-gradient(100% 100% at calc(100% + var(--x)) calc( 0% + var(--y)), rgb(020 175 125), rgb(000 010 255)), 
+      radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 077 000), rgb(000 200 255)), 
+      linear-gradient(60deg, rgb(255 000 000), rgb(120 086 255)); */
+      /* diff colours */
+      radial-gradient( 90% 100% at calc( 50% + var(--x)) calc( 0% + var(--y)), #0098b0, #fed9b7),
+      radial-gradient(100% 100% at calc( 80% - var(--x)) calc( 0% - var(--y)), #00afb9, #f7a58f),
+      radial-gradient(150% 210% at calc(100% + var(--x)) calc( 0% + var(--y)), #40c3c2, #f48b7b),
+      radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), #0098b0, #f07167),
+      linear-gradient(60deg, #0098b0, #f07167);
+      background-blend-mode: overlay, overlay, difference, difference, difference, normal;
+   }
+  
+   @keyframes gradient {
+    0% {
+        background-position: 0% 50%;
+    }
+    16.66% {
+        background-position: 100% 50%;
+    }
+    33.33% {
+        background-position: 200% 50%;
+    }
+    50% {
+        background-position: 300% 50%;
+    }
+    66.66% {
+        background-position: 400% 50%;
+    }
+    83.33% {
+        background-position: 500% 50%;
+    }
+    100% {
+        background-position: 600% 50%;
+    }
+  }
+  
+  canvas {
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background:transparent;
+  }
+  
+  /* .body-bg {
+    background-image: 
+      linear-gradient(115deg, rgb(211 255 215), rgb(0 0 0)), 
+      radial-gradient( 90% 100% at calc( 50% + var(--x)) calc( 0% + var(--y)), rgb(200 200 200), rgb(022 000 045)), 
+      radial-gradient(100% 100% at calc( 80% - var(--x)) calc( 0% - var(--y)), rgb(250 255 000), rgb(036 000 000)), 
+      radial-gradient(150% 210% at calc(100% + var(--x)) calc( 0% + var(--y)), rgb(020 175 125), rgb(000 010 255)), 
+      radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), rgb(255 077 000), rgb(000 200 255)), 
+      linear-gradient(60deg, rgb(255 000 000), rgb(120 086 255));
+    background-blend-mode: overlay, overlay, difference, difference, difference, normal;
+    z-index: -1;
+  } */
+  
+   video {
+    object-fit: cover;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .viewport-header{
+    position: relative;
+    height: 100%;
+  }
+  
+  main {
+    position: relative;
+    max-width: 1200px;
+  }
+  
+  .contrast-bg {
+    background-color: rgba(0, 0, 0, 0.66);
+    /* backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px ); */
+    /* width: 100%;
+    height: 100%; */
+    /* position: fixed; */
+    position: relative;
+    /* width: 100%;
+    height: 100%; */
+    min-height: 100vmax;
+  }
+  
+  .glass {
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur( 20px );
+    -webkit-backdrop-filter: blur( 20px );
+    border-radius: 1%;
+  }
+  
+  .custom-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 400 px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  
+  .center-img {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  .jumbo-article {
+    max-height: 500px;
+    background-position: center;
+    background-size: cover;
+  }
+  
+  .flavor {
+    color: #f07167;
+  }
+  
+  .flavor-2 {
+    color: #f48b7b;
+  }
+  
+  .flavor-7 {
+    color: #0098b0;
+  }
+
+  .flavor-5 {
+    color: #40c3c2;
+  }
+  
+  .dynamic-break{
+    word-wrap: break-word;
+  }
+  .offcanvas-size-xl {
+    --bs-offcanvas-width: min(95vw, 600px) !important;
+}
+
+  .btn-icon {
+    background-color: transparent;
+    border: none;
+  }
+  .btn-icon:hover {
+    background-color: transparent;
+  }
+  .btn-icon:focus-visible {
+    outline: none;
+  }
+  i.btn-icon {
+    vertical-align: super;
+  }
+  .keep-top {
+    z-index: 10000;
+  }
+  .pill-small {
+    padding:2px;
+    font-size:.5rem;
+  }
+  .pill-medium {
+    padding:7px;
+    font-size:.75rem;
+  }
+  /* .main_footer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #0098b0;
+  } */
+  
+  /* .accordion {
+    --bs-accordion-bg: transparent;
+    --bs-accordion-active-bg: transparent;
+  } */
+  
+  /* .accordion-item {
+    background-color: transparent;
+  }
+  .accordion-button:not(.collapsed) {
+    background-color: transparent;
+  }
+  
+  .accordion-button{
+    background-color: transparent;
+  } */
+  
+  /* .accordion-button{
+    background-color: transparent;
+  }
+  .accordion-button:focus {
+  box-shadow: none;
+  }
+  
+  .accordion-button:not(.collapsed) {
+  color: #212529;
+  background-color: transparent;
+  }
+  
+  .accordion-flush {
+    background-color: transparent;
+  } */
+  
+  .accordion-button {
+    /* color: rgb(36, 24, 24); */
+    color: #f07167;
+    font-size: 125%;
+    background-color: transparent;
+    width: 100%;
+  }
+  .accordion-button:hover{
+    color: #fed9b7;
+  }
+  .accordion-button::after {
+    display: none;
+  }
+  .accordion-button:not(.collapsed) {
+    color: #0098b0;
+    font-size: 125%;
+    background-color: transparent;
+    box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+  }
+  .accordion-button:focus {
+    z-index: 3;
+    border-color: transparent;
+    outline: 0;
+    box-shadow: 0 0 0 0rem rgba(13, 240, 253, 0.75);
+  }
+  .accordion-item {
+    background-color: transparent;
+    border: 1px solid rgba(0, 0, 0, 0);
+  }
+  
+  .accordion-body {
+    background-color: rgba(243, 243, 243, 0);
+    backdrop-filter: blur( 30px );
+    -webkit-backdrop-filter: blur( 30px );
+    /* border-radius: 2%; */
+    /* width: 100vw;
+    position: absolute; */
+  }
+  
+  /* .accordion {
+    --bs-accordion-border-radius: 0px
+  } */
