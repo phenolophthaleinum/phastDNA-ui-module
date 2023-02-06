@@ -403,11 +403,11 @@ Array.from(document.querySelectorAll(".run-btn")).forEach(btn => {
   })
 })
 
-Array.from(currentToasts).forEach(t => {
-  t.addEventListener('hidden.bs.toast', () => {
-    console.log('kupa')
-  })
-})
+// Array.from(currentToasts).forEach(t => {
+//   t.addEventListener('hidden.bs.toast', () => {
+//     console.log('kupa')
+//   })
+// })
 //old toasts
 // document.getElementById('post-button').addEventListener("click", (e) => {
 //   let invalid_sections = new Set();
