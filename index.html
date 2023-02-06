@@ -98,7 +98,7 @@
                     <div class="tab-pane fade" id="pills-predict" role="tabpanel" aria-labelledby="pills-predict-tab"
                         tabindex="0">
                         <div class="row">
-                            <div class="toast-container position-fixed bottom-0 start-0 p-3"></div>
+                            <!-- <div id="predict-toasts" class="toast-container position-fixed bottom-0 start-0 p-3"></div> -->
                             <form action="/" method="post" class="was-validated" id="predict-form">
                                 <!-- <button id="post-button" type="submit" class="btn btn-primary">Post</button> -->
                                 <div class="accordion" id="accordionExample">
@@ -130,70 +130,76 @@
                                                                 <!-- <h3 class="flavor-5">Output path</h3> -->
                                                                 <h3>
                                                                     <label class="flavor-5"
-                                                                        for="input-path-output">Output path</label>
+                                                                        for="predict-path-output">Output path</label>
                                                                 </h3>
-                                                                <button id="info-output" class="btn-icon keep-top"
+                                                                <button id="predict-info-output" class="btn-icon keep-top"
                                                                     type="button" data-bs-toggle="collapse"
-                                                                    data-bs-target="#outputInfo" aria-expanded="false"
-                                                                    aria-controls="outputInfo">
+                                                                    data-bs-target="#predict-outputInfo" aria-expanded="false"
+                                                                    aria-controls="predict-outputInfo">
                                                                     <i class="bi bi-info-circle-fill btn btn-icon"></i>
                                                                 </button>
                                                             </div>
-                                                            <div class="collapse mb-3 flex-grow-1" id="outputInfo">
-                                                                <div class="card card-body" id="outputInfoText">
+                                                            <div class="collapse mb-3 flex-grow-1" id="predict-outputInfo">
+                                                                <div class="card card-body" id="predict-outputInfoText">
                                                                     Path to directory with result files.
                                                                 </div>
                                                             </div>
                                                             <input type="url" class="form-control"
-                                                                id="input-path-output" aria-describedby="emailHelp"
+                                                                id="predict-path-output" aria-describedby="emailHelp"
                                                                 name="output_path" required>
+                                                            <div class="invalid-feedback">Please fill out this field
+                                                                with a valid path.</div>
                                                         </div>
                                                         <div
                                                             class="d-flex justify-content-between flex-wrap mb-3 flex-column">
                                                             <div class="d-flex">
                                                                 <h3>
                                                                     <label class="flavor-5"
-                                                                        for="input-path-classifier">Classfier
+                                                                        for="predict-path-classifier">Classfier
                                                                         path</label>
                                                                 </h3>
                                                                 <button class="btn-icon" type="button"
                                                                     data-bs-toggle="collapse"
-                                                                    data-bs-target="#classifierInfo"
+                                                                    data-bs-target="#predict-classifierInfo"
                                                                     aria-expanded="false"
-                                                                    aria-controls="classifierInfo">
+                                                                    aria-controls="predict-classifierInfo">
                                                                     <i class="bi bi-info-circle-fill btn btn-icon"></i>
                                                                 </button>
                                                             </div>
-                                                            <div class="collapse mb-3 flex-grow-1" id="classifierInfo">
+                                                            <div class="collapse mb-3 flex-grow-1" id="predict-classifierInfo">
                                                                 <div class="card card-body">
                                                                     Path to pre-trained phastDNA classifier.
                                                                 </div>
                                                             </div>
                                                             <input type="url" class="form-control"
-                                                                id="input-path-classifier" aria-describedby="emailHelp"
+                                                                id="predict-path-classifier" aria-describedby="emailHelp"
                                                                 name="classifier_path" required>
+                                                            <div class="invalid-feedback">Please fill out this field
+                                                                with a valid path.</div>
                                                         </div>
                                                         <div
                                                             class="d-flex justify-content-between flex-wrap mb-3 flex-column">
                                                             <div class="d-flex">
                                                                 <h3>
                                                                     <label class="flavor-5"
-                                                                        for="input-path-virus">Viruses path</label>
+                                                                        for="predict-path-virus">Viruses path</label>
                                                                 </h3>
                                                                 <button class="btn-icon" type="button"
                                                                     data-bs-toggle="collapse"
-                                                                    data-bs-target="#virusInfo" aria-expanded="false"
-                                                                    aria-controls="virusInfo">
+                                                                    data-bs-target="#predict-virusInfo" aria-expanded="false"
+                                                                    aria-controls="predict-virusInfo">
                                                                     <i class="bi bi-info-circle-fill btn btn-icon"></i>
                                                                 </button>
                                                             </div>
-                                                            <div class="collapse mb-3 flex-grow-1" id="virusInfo">
+                                                            <div class="collapse mb-3 flex-grow-1" id="predict-virusInfo">
                                                                 <div class="card card-body">
                                                                     Path to directory with viral genomes.
                                                                 </div>
                                                             </div>
-                                                            <input type="url" class="form-control" id="input-path-virus"
+                                                            <input type="url" class="form-control" id="predict-path-virus"
                                                                 aria-describedby="emailHelp" name="virus_path" required>
+                                                            <div class="invalid-feedback">Please fill out this field
+                                                                with a valid path.</div>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -227,13 +233,13 @@
                                                                 <h3 class="flavor-5">fastDNA path</h3>
                                                                 <button class="btn-icon" type="button"
                                                                     data-bs-toggle="collapse"
-                                                                    data-bs-target="#fastdnaInfo" aria-expanded="false"
-                                                                    aria-controls="fastdnaInfo">
+                                                                    data-bs-target="#predict-fastdnaInfo" aria-expanded="false"
+                                                                    aria-controls="predict-fastdnaInfo">
                                                                     <i class="bi bi-info-circle-fill btn btn-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <!-- info content -->
-                                                            <div class="collapse mb-3" id="fastdnaInfo">
+                                                            <div class="collapse mb-3" id="predict-fastdnaInfo">
                                                                 <div class="card card-body">
                                                                     Path to fastDNA executables.
                                                                     <div class="alert alert-warning d-flex align-items-center mt-3"
@@ -251,18 +257,20 @@
                                                             </div>
                                                             <!-- setting value -->
                                                             <input type="text" value="./fastDNA" class="form-control"
-                                                                id="input-fastdna-path" aria-describedby="emailHelp"
+                                                                id="predict-fastdna-path" aria-describedby="emailHelp"
                                                                 name="fastdna_path" required>
+                                                            <div class="invalid-feedback">Please fill out this field
+                                                                with a valid path.</div>
                                                         </div>
                                                         <div class="d-flex">
                                                             <h3 class="flavor-5">Threads</h3>
                                                             <button class="btn-icon" type="button"
-                                                                data-bs-toggle="collapse" data-bs-target="#threadsInfo"
-                                                                aria-expanded="false" aria-controls="threadsInfo">
+                                                                data-bs-toggle="collapse" data-bs-target="#predict-threadsInfo"
+                                                                aria-expanded="false" aria-controls="predict-threadsInfo">
                                                                 <i class="bi bi-info-circle-fill btn btn-icon"></i>
                                                             </button>
                                                         </div>
-                                                        <div class="collapse mb-3" id="threadsInfo">
+                                                        <div class="collapse mb-3" id="predict-threadsInfo">
                                                             <div class="card card-body">
                                                                 Number of processor threads to be used by phastDNA.
                                                             </div>
@@ -273,7 +281,7 @@
                                                             </div>
                                                             <div class="col-sm-11 pt-1">
                                                                 <input type="range" class="form-range" min="1" max="5"
-                                                                    step="1" id="input-fastdna-threads" name="threads">
+                                                                    step="1" id="predict-fastdna-threads" name="threads">
                                                             </div>
                                                         </div>
                                                     </div>
@@ -309,19 +317,19 @@
                                                             <div class="d-flex">
                                                                 <h3 class="flavor-5">Considered hits</h3>
                                                                 <button class="btn-icon" type="button"
-                                                                    data-bs-toggle="collapse" data-bs-target="#hitsInfo"
-                                                                    aria-expanded="false" aria-controls="hitsInfo">
+                                                                    data-bs-toggle="collapse" data-bs-target="#predict-hitsInfo"
+                                                                    aria-expanded="false" aria-controls="predict-hitsInfo">
                                                                     <i class="bi bi-info-circle-fill btn btn-icon"></i>
                                                                 </button>
                                                             </div>
-                                                            <div class="collapse mb-3 flex-grow-1" id="hitsInfo">
+                                                            <div class="collapse mb-3 flex-grow-1" id="predict-hitsInfo">
                                                                 <div class="card card-body">
                                                                     Maximum number of host hits to include in fastDNA
                                                                     prediction step.
                                                                 </div>
                                                             </div>
                                                             <input type="number" value="50" min="1" class="form-control"
-                                                                id="input-fastdna-hits" aria-describedby="emailHelp"
+                                                                id="predict-fastdna-hits" aria-describedby="emailHelp"
                                                                 name="hits" required>
                                                             <div class="invalid-feedback">Please fill out this field
                                                                 with value higher than 1.</div>
@@ -338,38 +346,158 @@
                     </div>
                     <!-- Train tab -->
                     <div class="tab-pane fade" id="pills-train" role="tabpanel" aria-labelledby="pills-train-tab"
-                        tabindex="0">...</div>
-                    <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab"
-                        tabindex="0">...</div>
+                        tabindex="0">
+                        <div class="row">
+                            <!-- <div  id="train-toasts" class="toast-container position-fixed bottom-0 start-0 p-3"></div> -->
+                            <form action="/" method="post" class="was-validated" id="train-form">
+                                <!-- <button id="post-button" type="submit" class="btn btn-primary">Post</button> -->
+                                <div class="accordion" id="accordionExample">
+                                    <div class="accordion-item">
+                                        <h2 class="accordion-header" id="headingOne">
+                                            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                                data-bs-target="#collapseOne" aria-expanded="true"
+                                                aria-controls="collapseOne">
+                                                Path settings <span class="m-2 badge rounded-pill bg-danger pill-medium"
+                                                    style="display: none;"> </span>
+                                            </button>
+                                        </h2>
+                                        <div id="collapseOne" class="accordion-collapse collapse show"
+                                            aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                                            <div class="accordion-body">
+                                                <div class="glass p-5 mb-4 rounded-3" style="background-image:linear-gradient(
+                                    rgba(0, 0, 0, 0.35), 
+                                    rgba(0, 0, 0, 0.35)); 
+                                  background-position: center;
+                                  background-size: cover;">
+                                                    <div class="container-fluid">
+                                                        <div class="d-flex align-content-between flex-wrap flex-column">
+                                                            <p class="flavor-7 mt-auto col-md-8 fs-6">Settings related
+                                                                to required data paths.</p>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex justify-content-between flex-wrap mb-3 flex-column">
+                                                            <div class="d-flex">
+                                                                <!-- <h3 class="flavor-5">Output path</h3> -->
+                                                                <h3>
+                                                                    <label class="flavor-5"
+                                                                        for="train-path-output">Output path</label>
+                                                                </h3>
+                                                                <button id="train-info-output" class="btn-icon keep-top"
+                                                                    type="button" data-bs-toggle="collapse"
+                                                                    data-bs-target="#train-outputInfo" aria-expanded="false"
+                                                                    aria-controls="train-outputInfo">
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                </button>
+                                                            </div>
+                                                            <div class="collapse mb-3 flex-grow-1" id="train-outputInfo">
+                                                                <div class="card card-body" id="train-outputInfoText">
+                                                                    Path to directory with result files.
+                                                                </div>
+                                                            </div>
+                                                            <input type="url" class="form-control"
+                                                                id="train-path-output" aria-describedby="emailHelp"
+                                                                name="output_path" required>
+                                                            <div class="invalid-feedback">Please fill out this field
+                                                                with a valid path.</div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex justify-content-between flex-wrap mb-3 flex-column">
+                                                            <div class="d-flex">
+                                                                <h3>
+                                                                    <label class="flavor-5"
+                                                                        for="train-path-host">Hosts path</label>
+                                                                </h3>
+                                                                <button class="btn-icon" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#train-hostInfo"
+                                                                    aria-expanded="false"
+                                                                    aria-controls="train-hostInfo">
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                </button>
+                                                            </div>
+                                                            <div class="collapse mb-3 flex-grow-1" id="train-hostInfo">
+                                                                <div class="card card-body">
+                                                                    Path to directory with host genomes.
+                                                                </div>
+                                                            </div>
+                                                            <input type="url" class="form-control"
+                                                                id="train-path-host" aria-describedby="emailHelp"
+                                                                name="host_path" required>
+                                                            <div class="invalid-feedback">Please fill out this field
+                                                                with a valid path.</div>
+                                                        </div>
+                                                        <div
+                                                            class="d-flex justify-content-between flex-wrap mb-3 flex-column">
+                                                            <div class="d-flex">
+                                                                <h3>
+                                                                    <label class="flavor-5"
+                                                                        for="train-path-virus">Viruses path</label>
+                                                                </h3>
+                                                                <button class="btn-icon" type="button"
+                                                                    data-bs-toggle="collapse"
+                                                                    data-bs-target="#train-virusInfo" aria-expanded="false"
+                                                                    aria-controls="train-virusInfo">
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                </button>
+                                                            </div>
+                                                            <div class="collapse mb-3 flex-grow-1" id="train-virusInfo">
+                                                                <div class="card card-body">
+                                                                    Path to directory with viral genomes.
+                                                                </div>
+                                                            </div>
+                                                            <input type="url" class="form-control" id="train-path-virus"
+                                                                aria-describedby="emailHelp" name="virus_path" required>
+                                                            <div class="invalid-feedback">Please fill out this field
+                                                                with a valid path.</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+
                 </div>
-            </main>
-            <!-- Floating footer -->
-            <footer class="fixed-bottom my-5">
-                <div class="row">
-                    <!-- Floating button -->
-                    <div class="d-grid d-md-flex justify-content-md-end px-4">
-                        <div class="d-flex">
+                <div class="tab-pane fade" id="pills-disabled" role="tabpanel" aria-labelledby="pills-disabled-tab"
+                    tabindex="0">...</div>
+        </div>
+        </main>
+        <!-- Floating footer -->
+        <footer class="fixed-bottom my-5">
+            <div class="row">
+                <div class="toast-container position-fixed bottom-0 start-0 p-3"></div>
+                <!-- Floating button -->
+                <div class="d-grid d-md-flex justify-content-md-end px-4">
+                    <div class="d-flex">
                         <button type="button" style="display: none;" id="offcanvas-params-btn" class="btn btn-primary"
                             data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
                             aria-controls="offcanvasWithBothOptions"> <i class="bi bi-three-dots-vertical"></i>
                             Parameters preview</button>
-                        <button id="post-button" type="submit" class="btn btn-primary" form="predict-form">
+                        <button id="post-predict-button" style="display: none;" type="submit"
+                            class="btn btn-primary run-btn" form="predict-form">
                             <i class="bi bi-play-fill"></i>
                             Run</button>
+                        <button id="post-train-button" type="submit" style="display: none;"
+                            class="btn btn-primary run-btn" form="train-form">
+                            <i class="bi bi-play-fill"></i>
+                            Run</button>
+                    </div>
+                    <!-- Offcanvas menu -->
+                    <div class="glass offcanvas offcanvas-start offcanvas-size-xl" data-bs-scroll="true" tabindex="-1"
+                        id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+                        <div class="offcanvas-header flavor-2">
+                            <h5 class="display-6 offcanvas-title" id="offcanvasWithBothOptionsLabel">Current setup
+                            </h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
+                                aria-label="Close"></button>
                         </div>
-                        <!-- Offcanvas menu -->
-                        <div class="glass offcanvas offcanvas-start offcanvas-size-xl" data-bs-scroll="true"
-                            tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-                            <div class="offcanvas-header flavor-2">
-                                <h5 class="display-6 offcanvas-title" id="offcanvasWithBothOptionsLabel">Current setup
-                                </h5>
-                                <button type="button" class="btn-close" data-bs-dismiss="offcanvas"
-                                    aria-label="Close"></button>
-                            </div>
-                            <div class="offcanvas-body flavor-2">
-                                <!-- <div id="current-setup"></div> -->
-                                <div class="list-group" id="current-setup">
-                                    <!-- <div class="list-group-item">
+                        <div class="offcanvas-body flavor-2">
+                            <!-- <div id="current-setup"></div> -->
+                            <div class="list-group" id="current-setup">
+                                <!-- <div class="list-group-item">
                                         <h5 class="mb-1">List group item heading</h5>
                                         <p class="mb-1">Some placeholder content in a paragraph.</p>
                                     </div>
@@ -389,13 +517,13 @@
                                         <p class="mb-1">Some placeholder content in a paragraph.</p>
                                         <small class="text-muted">And some muted small print.</small>
                                     </div> -->
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
-            </footer>
-        </div>
+            </div>
+        </footer>
+    </div>
     </div>
 
     <!-- <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script> -->

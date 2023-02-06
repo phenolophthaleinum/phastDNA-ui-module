@@ -207,6 +207,9 @@
     padding:7px;
     font-size:.75rem;
   }
+  .run-btn {
+    z-index: 1;
+  }
   /* .main_footer {
     position: absolute;
     width: 100%;

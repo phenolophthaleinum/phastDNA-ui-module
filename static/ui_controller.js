@@ -1,24 +1,44 @@
 var param_btn = document.getElementById('offcanvas-params-btn');
+var run_pred_btn = document.getElementById('post-predict-button');
+var run_train_btn = document.getElementById('post-train-button');
 var setup = document.getElementById('current-setup');
-var threads_slider = document.getElementById('input-fastdna-threads');
+var threads_slider = document.getElementById('predict-fastdna-threads');
 threads_slider.max = window.navigator.hardwareConcurrency;
 var threads_num = document.getElementById('threads-num');
 threads_num.innerText = threads_slider.value;
 console.log(threads_num);
+var predict_form = document.getElementById('predict-form');
+console.log(predict_form);
+var train_form = document.getElementById('train-form');
+console.log(train_form);
+var currentTab = document.getElementById('pills-home-tab');
+var currentToasts = document.getElementsByClassName('.toast');
 // const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
 // const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
 params = {
-  'input-path-output': "Output path",
-  'input-path-classifier': "Classifier path",
-  'input-path-virus': "Viruses path",
-  'input-fastdna-path': "fastDNA path",
-  'input-fastdna-threads': 'Threads',
-  'input-fastdna-hits': "Considered hits"
+  'pills-predict-tab': {
+    'predict-path-output': "Output path",
+    'predict-path-classifier': "Classifier path",
+    'predict-path-virus': "Viruses path",
+    'predict-fastdna-path': "fastDNA path",
+    'predict-fastdna-threads': 'Threads',
+    'predict-fastdna-hits': "Considered hits"
+  },
+  'pills-train-tab': {
+    'train-path-output': "Output path",
+    'train-path-host': "Hosts path",
+    'train-path-virus': "Viruses path",
+  }
+}
+tabs = {
+  'pills-home-tab': "Home",
+  'pills-predict-tab': "Predict",
+  'pills-train-tab': "Train"
 }
 
 param_btn.onclick = function () {
   setup.innerHTML = '';
-  for (const [key, val] of Object.entries(params)) {
+  for (const [key, val] of Object.entries(params[currentTab])) {
     var elem = document.getElementById(key);
     if (elem && elem.value !== "") {
       var elem_value = elem.value;
@@ -61,42 +81,101 @@ function test() {
 //         console.log("not home");
 //     }
 // }
-function hideButton() {
+function hideParamButton() {
   param_btn.style.display = "none";
+}
+
+function hideRunButton() {
+  run_btn.style.display = "none";
 }
 // function showButton(){
 //   param_btn.style.display = "block";
 // }
 
+window.onload = function () {
+  var tabEl = document.querySelectorAll('button[data-bs-toggle="pill"]')
+  tabEl.forEach(function (el) {
+    el.addEventListener('shown.bs.tab', function (event) {
+      console.log(event.target.id); // newly activated tab
+      if (event.target.id === 'pills-home-tab') {
+        // param_btn.style.display = "none";
+        // gsap.to(param_btn, {
+        //   y: 60,
+        //   opacity: 0,
+        //   ease: "power1.inOut",
+        //   force3D: true,
+        //   onComplete: hideParamButton,
+        //   duration: 0.2
+        // })
+        gsap.to(".btn-primary", {
+          y: 60,
+          opacity: 0,
+          force3D: true,
+          stagger: {
+            each: 0.1,
+            ease: "power1.inOut",
+            onComplete: function () {
+              this.targets()[0].style.display = "none";
+            }
+          },
+          // onComplete: hideRunButton,
+          duration: 0.2
+        })
+        currentTab = 'pills-home-tab';
+      }
+      else {
+        if (event.target.id === 'pills-predict-tab') {
+          param_btn.style.display = "block";
+          run_pred_btn.style.display = "block";
+          run_train_btn.style.display = "none";
+          currentTab = 'pills-predict-tab';
+          // run_btn.form = predict_form;
+          // document.getElementById("post-button").form = document.getElementById("predict-form");
+          // console.log(document.getElementById("post-button").form);
+        }
+        if (event.target.id === 'pills-train-tab') {
+          param_btn.style.display = "block";
+          run_train_btn.style.display = "block";
+          run_pred_btn.style.display = "none";
+          currentTab = 'pills-train-tab';
+          // document.getElementById("post-button").form = document.getElementById("train-form");
+          // console.log(document.getElementById("post-button").form);
+        }
+        // gsap.to(param_btn, {
+        //   y: 0,
+        //   opacity: 1,
+        //   duration: 0.2,
+        //   ease: "power1.inOut",
+        //   force3D: true,
+        // })
+        gsap.to(".btn-primary", {
+          y: 0,
+          opacity: 1,
+          duration: 0.2,
+          force3D: true,
+          stagger: {
+            each: 0.1,
+            ease: "power1.inOut",
+            // onComplete: function() {
+            //   this.targets()[0].style.display = "block";
+            // }
+          },
+        })
+        // if (event.target.id === 'pills-predict-tab') {
 
-var tabEl = document.querySelectorAll('button[data-bs-toggle="pill"]')
-tabEl.forEach(function (el) {
-  el.addEventListener('shown.bs.tab', function (event) {
-    console.log(event.target.id); // newly activated tab
-    if (event.target.id === 'pills-home-tab') {
-      // param_btn.style.display = "none";
-      gsap.to(param_btn, {
-        y: 60,
-        opacity: 0,
-        ease: "power1.inOut",
-        force3D: true,
-        onComplete: hideButton,
-        duration: 0.2
-      })
-    }
-    else {
-      param_btn.style.display = "block";
-      gsap.to(param_btn, {
-        y: 0,
-        opacity: 1,
-        duration: 0.2,
-        ease: "power1.inOut",
-        force3D: true,
-      })
-    }
-    // event.relatedTarget // previous active tab
+        //   // run_btn.form = predict_form;
+        //   // document.getElementById("post-button").form = document.getElementById("predict-form");
+        //   // console.log(document.getElementById("post-button").form);
+        // }
+        // if (event.target.id === 'pills-train-tab') {
+        //   // document.getElementById("post-button").form = document.getElementById("train-form");
+        //   // console.log(document.getElementById("post-button").form);
+        // }
+      }
+      // event.relatedTarget // previous active tab
+    })
   })
-})
+}
 
 // const tabEl = document.querySelector('button[data-bs-target="#pills-home"]')
 // tabEl.addEventListener('shown.bs.tab', event => {
@@ -190,7 +269,7 @@ function findAncestor(el, cls) {
 //   };
 // })();
 
-toast_container = document.getElementsByClassName('toast-container')[0];
+// console.log(document.getElementsByClassName('toast-container'));
 // let invalid_sections = new Set();
 // Array.from(inputs_predict).forEach(input => {
 //   toast_container.innerHTML = '';
@@ -248,40 +327,52 @@ toast_container = document.getElementsByClassName('toast-container')[0];
 //     // console.log(badge);
 //   })
 // })
+let toast_container = document.getElementsByClassName('toast-container')[0];
+Array.from(document.querySelectorAll(".run-btn")).forEach(btn => {
+  btn.addEventListener("click", (e) => {
+    let targetForm = btn.id === "post-predict-button" ? "predict-form" : "train-form";
+    // let toast_containers = document.getElementsByClassName('toast-container');
+    // let toast_container = currentTab === "pills-predict-tab" ? toast_containers[0] : toast_containers[1];
+    // if (currentTab === "pills-predict-tab"){
+    //   toast_container = document.getElementById('predict-toasts');
+    // }
+    // if (currentTab === "pills-train-tab") {
+    //   toast_container = document.getElementById('train-toasts');
+    // }
+    // console.log(`current container: ${toast_container}`);
+    // currentToasts = document.getElementsByClassName('.toast');
+    let invalid_sections = new Set();
+    // invalid_sections.add(1);
+    // console.log(toast_container);
+    // console.log(invalid_sections);
+    toast_container.innerHTML = '';
+    let invalidInputs = document.getElementById(targetForm).querySelectorAll(':invalid')
+    console.log(invalidInputs);
 
-document.getElementById('post-button').addEventListener("click", (e) => {
-  let invalid_sections = new Set();
-  // invalid_sections.add(1);
-  // console.log(toast_container);
-  // console.log(invalid_sections);
-  toast_container.innerHTML = '';
-  let invalidInputs = document.getElementById("predict-form").querySelectorAll(':invalid')
-  console.log(invalidInputs);
-
-  Array.from(invalidInputs).forEach(invalid => {
-    while (invalid) {
-      if (invalid.className === 'accordion-item') {
-        var i = invalid.querySelectorAll('h2.accordion-header')[0].innerText;
-        console.log(typeof i);
-        invalid_sections.add(i);
-        // i[0].style.display = "block"
-        break;
+    Array.from(invalidInputs).forEach(invalid => {
+      while (invalid) {
+        if (invalid.className === 'accordion-item') {
+          var i = invalid.querySelectorAll('h2.accordion-header')[0].innerText;
+          console.log(typeof i);
+          invalid_sections.add(i);
+          // i[0].style.display = "block"
+          break;
+        }
+        invalid = invalid.parentElement
       }
-      invalid = invalid.parentElement
-    }
-  })
-  console.log(invalid_sections);
+    })
+    console.log(invalid_sections);
 
-  invalid_sections.forEach(section => {
-    console.log(section)
-    var t = document.createElement('div')
-    t.id = 'liveToast'
-    t.classList = 'toast'
-    t.role = 'alert'
-    t.ariaAtomic = 'true';
-    t.ariaLive = 'assertive';
-    //<div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
-    t.innerHTML = `
+    invalid_sections.forEach(section => {
+      console.log(section)
+      var t = document.createElement('div')
+      t.id = 'liveToast'
+      t.classList = 'toast'
+      t.role = 'alert'
+      t.ariaAtomic = 'true';
+      t.ariaLive = 'assertive';
+      //<div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+      t.innerHTML = `
       <div class="toast-header">
           <!-- <img src="..." class="rounded me-2" alt="..."> -->
           <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
@@ -291,25 +382,96 @@ document.getElementById('post-button').addEventListener("click", (e) => {
               aria-label="Close"></button>
       </div>
       <div class="toast-body">
+          <h3>${tabs[currentTab]}</h3>
           <p>${section} has invalid fields.</p>
       </div>
   </div>`;
-    toast_container.appendChild(t);
-  })
+      toast_container.appendChild(t);
+    })
 
-  console.log(toast_container)
-  console.log(document.querySelectorAll('.toast'))
-  var toastElList = [].slice.call(document.querySelectorAll('.toast'))
-  console.log(toastElList)
-  var toastList = toastElList.map(function (toastEl) {
-    return new bootstrap.Toast(toastEl)
+    console.log(toast_container)
+    console.log(document.querySelectorAll('.toast'))
+    var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+    console.log(toastElList)
+    var toastList = toastElList.map(function (toastEl) {
+      return new bootstrap.Toast(toastEl)
+    })
+    toastList.forEach(toast => {
+      // console.log(toast.querySelector('.toast-body'))
+      toast.show()
+    })
   })
-  toastList.forEach(toast => {
-    // console.log(toast.querySelector('.toast-body'))
-    toast.show()
-  })
-
 })
+
+Array.from(currentToasts).forEach(t => {
+  t.addEventListener('hidden.bs.toast', () => {
+    console.log('kupa')
+  })
+})
+//old toasts
+// document.getElementById('post-button').addEventListener("click", (e) => {
+//   let invalid_sections = new Set();
+//   // invalid_sections.add(1);
+//   // console.log(toast_container);
+//   // console.log(invalid_sections);
+//   toast_container.innerHTML = '';
+//   let invalidInputs = document.getElementById("predict-form").querySelectorAll(':invalid')
+//   console.log(invalidInputs);
+
+//   Array.from(invalidInputs).forEach(invalid => {
+//     while (invalid) {
+//       if (invalid.className === 'accordion-item') {
+//         var i = invalid.querySelectorAll('h2.accordion-header')[0].innerText;
+//         console.log(typeof i);
+//         invalid_sections.add(i);
+//         // i[0].style.display = "block"
+//         break;
+//       }
+//       invalid = invalid.parentElement
+//     }
+//   })
+//   console.log(invalid_sections);
+
+//   invalid_sections.forEach(section => {
+//     console.log(section)
+//     var t = document.createElement('div')
+//     t.id = 'liveToast'
+//     t.classList = 'toast'
+//     t.role = 'alert'
+//     t.ariaAtomic = 'true';
+//     t.ariaLive = 'assertive';
+//     //<div id="liveToast" class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+//     t.innerHTML = `
+//       <div class="toast-header">
+//           <!-- <img src="..." class="rounded me-2" alt="..."> -->
+//           <i class="bi bi-exclamation-triangle-fill flex-shrink-0 me-2"></i>
+//           <strong class="me-auto">Error</strong>
+//           <!-- <small>11 mins ago</small> -->
+//           <button type="button" class="btn-close" data-bs-dismiss="toast"
+//               aria-label="Close"></button>
+//       </div>
+//       <div class="toast-body">
+//           <p>${section} has invalid fields.</p>
+//       </div>
+//   </div>`;
+//     toast_container.appendChild(t);
+//   })
+
+//   console.log(toast_container)
+//   console.log(document.querySelectorAll('.toast'))
+//   var toastElList = [].slice.call(document.querySelectorAll('.toast'))
+//   console.log(toastElList)
+//   var toastList = toastElList.map(function (toastEl) {
+//     return new bootstrap.Toast(toastEl)
+//   })
+//   toastList.forEach(toast => {
+//     // console.log(toast.querySelector('.toast-body'))
+//     toast.show()
+//   })
+
+// })
+
+
 // useless focusing on element from toast
 // document.getElementById("toast-target").addEventListener("click", () => {
 //   document.getElementById("input-path-output").focus();
