@@ -257,7 +257,15 @@
     width: 100%;
   }
   .accordion-button:hover{
-    color: #fed9b7;
+    color: rgb(254, 217, 183);
+    /* text-shadow: 0 0 2px rgba(255,255,255,.8),
+                 0 0 8px rgba(254, 217, 183,.8),
+                 0 0 10px rgba(254, 217, 183,.8),
+                 0 0 20px rgba(66,220,219,.8),
+                 0 0 30px rgba(66,220,219,.8),
+                 0 0 40px rgba(66,220,219,.8),
+                 0 0 50px rgba(66,220,219,.5),
+                 0 0 80px rgba(66,220,219,.5); */
   }
   .accordion-button::after {
     display: none;
@@ -286,6 +294,36 @@
     /* border-radius: 2%; */
     /* width: 100vw;
     position: absolute; */
+  }
+
+  .neon-logo {
+    /* color: rgb(64, 195, 194); */
+    color: rgb(168, 206, 206);
+    animation: neonGlow 2s infinite alternate cubic-bezier(0.455, 0.030, 0.515, 0.955);
+  }
+  @keyframes neonGlow {
+    0% {
+      text-shadow: 0 0 10px rgba(168, 206, 206, 0.8),
+                   0 0 20px rgba(168, 206, 206,.8),
+                   0 0 22px  rgba(168, 206, 206,.8),
+                   0 0 40px  rgba(66,220,219,.8),
+                   0 0 60px  rgba(66,220,219,.8),
+                   0 0 80px  rgba(66,220,219,.5),
+                   0 0 100px rgba(66,220,219,.5),
+                   0 0 140px rgba(66,220,219,.5),
+                   0 0 200px rgba(66,220,219,.5);
+    }
+    100% {
+      color: rgb(168, 206, 206);
+      text-shadow: 0 0 2px rgba(214, 243, 243, 0.8),
+                   0 0 8px rgba(214, 243, 243,.8),
+                   0 0 10px rgba(214, 243, 243,.8),
+                   0 0 20px rgba(66,220,219,.8),
+                   0 0 30px rgba(66,220,219,.8),
+                   0 0 40px rgba(66,220,219,.8),
+                   0 0 50px rgba(66,220,219,.5),
+                   0 0 80px rgba(66,220,219,.5);
+    }
   }
   
   /* .accordion {

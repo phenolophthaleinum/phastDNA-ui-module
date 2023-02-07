@@ -32,6 +32,22 @@ params = {
     'train-path-output': "Output path",
     'train-path-host': "Hosts path",
     'train-path-virus': "Viruses path",
+    'train-fastdna-path': 'fastDNA path',
+    'train-fastdna-threads': 'Threads',
+    'train-training-dim': 'Word vector size',
+    'train-training-minn': 'Minimum k-mer size',
+    'train-training-maxn': 'Maximum k-mer size',
+    'train-training-readlen': 'Read length',
+    'train-training-readnum': 'Read samples number',
+    'train-training-lr': 'Learning rate',
+    'train-training-ulr': 'Learning rate update rate',
+    'train-training-epoch': 'Epochs number',
+    'train-training-loss': 'Loss function',
+    'train-opt-preiter': 'Pre-iterations number',
+    'train-opt-iter': 'Iterations number',
+    'train-opt-hits': 'Considered hits',
+    'train-opt-filter': 'Data filter',
+    'train-opt-reps': 'Representatives number',
   }
 }
 tabs = {

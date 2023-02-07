@@ -1035,21 +1035,27 @@
             <div class="row">
                 <div class="toast-container position-fixed bottom-0 start-0 p-3"></div>
                 <!-- Floating button -->
-                <div class="d-grid d-md-flex justify-content-md-end px-4">
-                    <div class="d-flex">
-                        <button type="button" style="display: none;" id="offcanvas-params-btn" class="btn btn-primary"
-                            data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
-                            aria-controls="offcanvasWithBothOptions"> <i class="bi bi-three-dots-vertical"></i>
-                            Parameters preview</button>
-                        <button id="post-predict-button" style="display: none;" type="submit"
-                            class="btn btn-primary run-btn" form="predict-form">
-                            <i class="bi bi-play-fill"></i>
-                            Run</button>
-                        <button id="post-train-button" type="submit" style="display: none;"
-                            class="btn btn-primary run-btn" form="train-form">
-                            <i class="bi bi-play-fill"></i>
-                            Run</button>
-                    </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end px-4">
+                <!-- <div class="d-grid d-flex justify-content-end flex-wrap px-4"> -->
+                    <!-- <div class="d-flex justify-content-evenly">
+                        <div class="col-sm"> -->
+                            <button type="button" style="display: none;" id="offcanvas-params-btn" class="btn btn-primary px-4"
+                                data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions"
+                                aria-controls="offcanvasWithBothOptions"> <i class="bi bi-three-dots-vertical"></i>
+                                Parameters preview</button>
+                        <!-- </div>
+                        <div class="col-sm-11"> -->
+                            <button id="post-predict-button" style="display: none;" type="submit"
+                                class="btn btn-primary run-btn" form="predict-form">
+                                <i class="bi bi-play-fill"></i>
+                                Run</button>
+                                <!-- <div class="col-sm-11"> -->
+                            <button id="post-train-button" type="submit" style="display: none;"
+                                class="btn btn-primary run-btn" form="train-form">
+                                <i class="bi bi-play-fill"></i>
+                                Run</button>
+                        <!-- </div>
+                    </div> -->
                     <!-- Offcanvas menu -->
                     <div class="glass offcanvas offcanvas-start offcanvas-size-xl" data-bs-scroll="true" tabindex="-1"
                         id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
