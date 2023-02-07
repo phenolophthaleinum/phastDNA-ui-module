@@ -3,8 +3,12 @@ var run_pred_btn = document.getElementById('post-predict-button');
 var run_train_btn = document.getElementById('post-train-button');
 var setup = document.getElementById('current-setup');
 var threads_slider = document.getElementById('predict-fastdna-threads');
+var minn_slider = document.getElementById('train-training-minn');
+var maxn_slider = document.getElementById('train-training-maxn');
 threads_slider.max = window.navigator.hardwareConcurrency;
 var threads_num = document.getElementById('threads-num');
+var minn_num = document.getElementById('minn-num');
+var maxn_num = document.getElementById('maxn-num');
 threads_num.innerText = threads_slider.value;
 console.log(threads_num);
 var predict_form = document.getElementById('predict-form');
@@ -55,6 +59,9 @@ param_btn.onclick = function () {
     else {
       continue;
     }
+  }
+  if (setup.innerHTML === ''){
+    setup.innerHTML = `<h5>No parameters has been set.</h5>`;
   }
   // output = document.getElementById('input-path-output').value
   // var output_entry = document.createElement('h6');
@@ -191,6 +198,14 @@ window.onload = function () {
 
 threads_slider.addEventListener('input', (e) => {
   threads_num.textContent = e.target.value;
+})
+
+minn_slider.addEventListener('input', (e) => {
+  minn_num.textContent = e.target.value;
+})
+
+maxn_slider.addEventListener('input', (e) => {
+  maxn_num.textContent = e.target.value;
 })
 
 
@@ -382,7 +397,7 @@ Array.from(document.querySelectorAll(".run-btn")).forEach(btn => {
               aria-label="Close"></button>
       </div>
       <div class="toast-body">
-          <h3>${tabs[currentTab]}</h3>
+          <h3>${tabs[currentTab]}:</h3>
           <p>${section} has invalid fields.</p>
       </div>
   </div>`;
