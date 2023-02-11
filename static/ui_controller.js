@@ -87,6 +87,64 @@ param_btn.onclick = function () {
   // setup.appendChild(output_entry);
 }
 
+// function hideIcon() {
+//   var param_icon = document.getElementById('offcanvas-params-btn-icon');
+//   param_icon.style.display = "none";
+// }
+
+// gsap.set("#offcanvas-params-btn-icon", {
+//   display: 'none',
+//   opacity: 0
+// })
+
+// var btn_icon_anim = gsap.to("#offcanvas-params-btn-icon", .2, {
+//   display: 'inline',
+//   opacity: 1,
+//   ease: "power1.inOut",
+// });
+param_btn.addEventListener('mouseover', (e) => {
+  // gsap.to("#offcanvas-params-btn-label", .2, {
+  //   x: -20,
+  //   ease: "power1.inOut",
+  // });
+  // btn_icon_anim.play();
+  gsap.to("#offcanvas-params-btn-icon", .2, {
+    // display: 'inline',
+    // transform: 'scale(1)',
+    opacity: 1,
+    fontSize: 18,
+    ease: "power1.inOut",
+  });
+  gsap.to("#offcanvas-params-btn", .2, {
+    width: 300,
+    ease: "power1.inOut",
+  });
+  console.log(param_btn.style.width);
+});
+
+param_btn.addEventListener('mouseleave', (e) => {
+  // gsap.to("#offcanvas-params-btn-label", .2, {
+  //   x: -20,
+  //   ease: "power1.inOut",
+  // });
+  // btn_icon_anim.reverse();
+  gsap.to("#offcanvas-params-btn", 0.2, {
+    width: 275,
+    ease: "power1.inOut",
+  });
+  gsap.to("#offcanvas-params-btn-icon", .2, {
+    opacity: 0,
+    fontSize: 0,
+    ease: "power1.inOut",
+  });
+  // gsap.to("#offcanvas-params-btn-icon", .25, {
+  //   // transform: 'scale(0)',
+  //   // display: 'none',
+  //   delay: .25,
+  // });
+  console.log(param_btn.style.width);
+});
+
 
 var hometab = document.getElementById('pills-home-tab')
 console.log(hometab.ariaSelected)
