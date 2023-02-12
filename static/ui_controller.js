@@ -97,6 +97,11 @@ param_btn.onclick = function () {
 //   opacity: 0
 // })
 
+gsap.set("#train-btn-icon", {
+  // display: 'none',
+  left: -1000
+})
+
 // var btn_icon_anim = gsap.to("#offcanvas-params-btn-icon", .2, {
 //   display: 'inline',
 //   opacity: 1,
@@ -113,13 +118,14 @@ param_btn.addEventListener('mouseover', (e) => {
     // transform: 'scale(1)',
     opacity: 1,
     fontSize: 18,
+    force3D: true,
     ease: "power1.inOut",
   });
-  gsap.to("#offcanvas-params-btn", .2, {
-    width: 300,
-    ease: "power1.inOut",
-  });
-  console.log(param_btn.style.width);
+  // gsap.to("#offcanvas-params-btn", .2, {
+  //   width: 300,
+  //   ease: "power1.inOut",
+  // });
+  // console.log(param_btn.style.width);
 });
 
 param_btn.addEventListener('mouseleave', (e) => {
@@ -128,13 +134,14 @@ param_btn.addEventListener('mouseleave', (e) => {
   //   ease: "power1.inOut",
   // });
   // btn_icon_anim.reverse();
-  gsap.to("#offcanvas-params-btn", 0.2, {
-    width: 275,
-    ease: "power1.inOut",
-  });
+  // gsap.to("#offcanvas-params-btn", 0.2, {
+  //   width: 275,
+  //   ease: "power1.inOut",
+  // });
   gsap.to("#offcanvas-params-btn-icon", .2, {
     opacity: 0,
     fontSize: 0,
+    force3D: true,
     ease: "power1.inOut",
   });
   // gsap.to("#offcanvas-params-btn-icon", .25, {
@@ -142,8 +149,46 @@ param_btn.addEventListener('mouseleave', (e) => {
   //   // display: 'none',
   //   delay: .25,
   // });
-  console.log(param_btn.style.width);
+  // console.log(param_btn.style.width);
 });
+
+run_train_btn.addEventListener('mouseenter', () => {
+  console.log(run_train_btn.getBoundingClientRect())
+  var targetOffset = run_train_btn.getBoundingClientRect().width;
+  gsap.to('.btn-label', .5, {
+    // transformOrigin: "center center",
+    left: targetOffset,
+    ease: "power1.inOut",
+    force3D: true,
+  });
+  gsap.to('#train-btn-icon', .5, {
+    // transformOrigin: "center center",
+    // x: 8,
+    left: '50%',
+    ease: "power1.inOut",
+    force3D: true,
+  });
+})
+
+run_train_btn.addEventListener('mouseleave', () => {
+  // console.log('train button enter')
+  var targetOffset = run_train_btn.getBoundingClientRect().width;
+  gsap.to('.btn-label', .5, {
+    // transformOrigin: "center center",
+    // x: -8,
+    left: 0,
+    ease: "power1.inOut",
+    force3D: true,
+  });
+  gsap.to('#train-btn-icon', .5, {
+    // transformOrigin: "center center",
+    // x: -targetOffset,
+    left: -targetOffset,
+    ease: "power1.inOut",
+    force3D: true,
+  });
+})
+
 
 
 var hometab = document.getElementById('pills-home-tab')

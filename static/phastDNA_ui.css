@@ -21,10 +21,75 @@
 
 button {
   transition: .2s ease;
+  overflow: hidden;
+  align-content: stretch;
+}
+
+#post-train-button {
+  padding: 0;
+  box-sizing: border-box;
+  min-height: 45.17px;
+  min-width: 75px;
 }
 
 i {
   transition: .2s ease;
+}
+
+.btn-slide {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  align-content: stretch;
+  position: relative;
+}
+
+/* @media (max-width: 767px) {
+  #post-train-button .btn-slide {
+    height: auto;
+    width: auto;
+    display: block;
+  }
+} */
+
+#train-btn-icon {
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+.red-test-wrapper {
+  background-color: transparent;
+  z-index: 5;
+  /* height: fit-content;
+  width: fit-content; */
+  position: relative;
+  overflow: hidden;
+}
+
+.red-test {
+  background-color: red;
+  z-index: 5;
+  /* height: fit-content;
+  width: fit-content; */
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.run-wrapper {
+  background-color: transparent;
+  height: 100%;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-label {
+  overflow: hidden;
 }
 
 .icon-list li::before {
