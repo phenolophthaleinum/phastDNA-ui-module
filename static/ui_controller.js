@@ -223,7 +223,7 @@ window.onload = function () {
   tabEl.forEach(function (el) {
     el.addEventListener('shown.bs.tab', function (event) {
       console.log(event.target.id); // newly activated tab
-      if (event.target.id === 'pills-home-tab') {
+      if (['pills-home-tab', 'pills-task-tab'].includes(event.target.id)) {
         // param_btn.style.display = "none";
         // gsap.to(param_btn, {
         //   y: 60,
@@ -632,3 +632,27 @@ Array.from(document.querySelectorAll(".run-btn")).forEach(btn => {
 //     duration: 0.2
 //   })
 // })
+
+//ajax
+// $(document).ready(function() {
+//   setInterval("ajaxd()", 5000); // call every 10 seconds
+// });
+
+// function ajaxd() { 
+//   //reload result into element with id "sysStatus"
+//   console.log("/test"); 
+// };
+
+// var atest = document.getElementById("ajax-test");
+// setInterval(function() {
+//   $.ajax({
+//     url: "/test",
+//     type: 'GET',
+//     success: function(response) {
+//       atest.innerText = response;
+//     },
+//     error: function(xhr) {
+//       alert("XHR error");
+//     }
+//   });
+// }, 5000);
