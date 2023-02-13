@@ -10,13 +10,13 @@ def run(task_id):
                     datefmt='%H:%M:%S',
                     level=logging.DEBUG)
 
-    logging.info("start")
+    logging.info(f"start {task_id}")
     time.sleep(0.5)
     logging.info("reading data")
     time.sleep(2)
     logging.info("training")
     time.sleep(10)
-    logging.info("finished")
+    logging.info(f"finished {task_id}")
 
 
 if __name__ == '__main__':

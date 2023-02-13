@@ -1,9 +1,10 @@
 
 var atest = document.getElementById("ajax-test");
 var spinner = document.getElementById("spinner");
+var task_name = document.getElementById("task-name").innerText;
 var interval = setInterval(function() {
   $.ajax({
-    url: "/test",
+    url: `/test/${task_name}`,
     type: 'GET',
     success: function(response) {
       // atest.innerHTML += `<p>${response}</p>`;

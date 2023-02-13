@@ -8,6 +8,7 @@ import datetime
 app = flask.Flask(__name__, template_folder=".")
 
 current_task_file = ''
+# tasks = {}
 
 @app.route('/')
 def index():
@@ -23,6 +24,7 @@ def test_f():
         task_name = f'{name_prefix}_{datetime.datetime.now():%Y_%m_%d_%H_%M_%S%z}'
         global current_task_file 
         current_task_file = task_name
+        # tasks[task_name] = {}
         print(task_name)
         print("Run test_f")
         # time.sleep(3)
@@ -36,16 +38,16 @@ def test_f():
         return flask.render_template('task.html', task_name=task_name)
         # return subprocess.check_output(['ping', 'google.com', '-t'])
 
-@app.route("/test")
-def get_status():
+@app.route("/test/<id>")
+def get_status(id):
     status = 1
-    with open(f"{current_task_file}.log", "r+b") as f:
+    with open(f"{id}.log", "r+b") as f:
         mm = mmap.mmap(f.fileno(), 0)
         logs = str(mm[::], 'utf-8')
         # print(logs[-20:].find('finished'))
-        if 'finished' in logs[-20:]:
+        if 'finished' in logs[-50:]:
             status = 0
-    return flask.jsonify({'content': logs, 'status': status, 'task_name': current_task_file})
+    return flask.jsonify({'content': logs, 'status': status})
 
 
 if __name__ == '__main__':
