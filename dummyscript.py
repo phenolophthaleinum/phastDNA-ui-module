@@ -15,7 +15,7 @@ def run(task_id):
     logging.info("reading data")
     time.sleep(2)
     logging.info("training")
-    time.sleep(10)
+    time.sleep(12)
     logging.info(f"finished {task_id}")
 
 

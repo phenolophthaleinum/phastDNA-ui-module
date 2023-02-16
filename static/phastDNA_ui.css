@@ -243,9 +243,10 @@ main {
 
 .glass {
   /* background-color: rgba(255, 255, 255, 0.1); */
-  background-color: rgba(247, 186, 1, 0.199);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  /* background-color: rgba(247, 186, 1, 0.199); */
+  background-color: rgba(204, 194, 164, 0.199);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border-radius: 1%;
 }
 
@@ -479,4 +480,32 @@ i.btn-icon {
     background-color: #d3ced4;
     border-radius: 10px;
     border: 3px none #ffffff;
+  }
+
+  .icon {
+    width: 75px;
+    height: 75px;
+    overflow: visible;
+    display: block;
+  }
+  
+  .icon-path {
+      fill: none;
+      stroke-width: 8;
+  }
+
+  #p1 {
+    filter: drop-shadow(0px 0px 15px rgb(88, 193, 232));
+  }
+  
+  #p2 {
+    filter: drop-shadow(0px 0px 15px rgb(176, 116, 219));
+  }
+  
+  #p3 {
+    filter: drop-shadow(0px 0px 15px rgb(250, 226, 87));
+  }
+  
+  #p4 {
+    filter: drop-shadow(0px 0px 15px rgb(102, 227, 143));
   }

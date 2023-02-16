@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Graphical User Interface for phastDNA">
     <meta name="author" content="Maciej Michalczyk">
-    <title>phastDNA: in-progress task</title>
+    <title>phastDNA: task in-progress</title>
 
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/starter-template/"> -->
 
@@ -59,12 +59,29 @@
                             <span class="visually-hidden">Loading...</span>
                           </div>
                     </div> -->
-                    <div class="container glass p-4 mb-4 rounded-3" style="max-height: 1000px; overflow: auto; resize: vertical;">
-                        <h2 id="task-name">{{task_name}}</h2>
-                        <div class="spinner-border text-primary" role="status" id="spinner">
+                    <div class="container glass p-4 mb-4 rounded-3">
+                        <div class="d-flex justify-content-between flex-wrap mb-4">
+                            <h2 id="task-name">{{task_name}}</h2>
+                            <svg xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"
+                                viewBox="0 0 200 200" class="icon" id="spinner">
+                                <path class="icon-path" pathLength="100" stroke-dasharray="100" stroke-dashoffset="-98"
+                                    stroke-linecap="round" id="p1" d="M 100 0 C 152 1 199 44 199 100 "
+                                    stroke="#0ebeff" />
+                                <path class="icon-path" id="p2" d="M 100 199 C 152 199 199 156 199 100" pathLength="100"
+                                    stroke-dasharray="100" stroke-dashoffset="98" stroke="#ae63e4"
+                                    stroke-linecap="round" />
+                                <path class="icon-path" id="p3" d="M 0 100 C 1 152 44 199 100 199" pathLength="100"
+                                    stroke-dasharray="100" stroke-dashoffset="98" stroke="#ffdd40"
+                                    stroke-linecap="round" />
+                                <path class="icon-path" id="p4" d="M 100 0 C 44 1 1 44 0 100" pathLength="100"
+                                    stroke-dasharray="100" stroke-dashoffset="98" stroke="#47cf73"
+                                    stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <!-- <div class="spinner-border text-primary" role="status" id="spinner">
                             <span class="visually-hidden">Loading...</span>
-                          </div>
-                        <div id="ajax-test">
+                        </div> -->
+                        <div id="ajax-test" style="max-height: 1000px; overflow: auto; resize: vertical;">
                         </div>
                     </div>
                 </div>
