@@ -250,6 +250,47 @@ main {
   border-radius: 1%;
 }
 
+.nav .active {
+  background-color: rgba(204, 194, 164, 0.199) !important;
+  backdrop-filter: blur(12px);
+  color: #f07167 !important;
+}
+
+.nav-link {
+  color: #40c3c2 !important;
+}
+
+.form-control {
+  background-color: rgba(114, 106, 91, 0.199) !important;
+  backdrop-filter: blur(12px);
+  color: #d3ced4;
+}
+
+.form-control.is-valid {
+  background-color: rgba(114, 106, 91, 0.199) !important;
+  backdrop-filter: blur(12px);
+}
+
+.form-control:valid {
+  background-color: rgba(114, 106, 91, 0.199) !important;
+  backdrop-filter: blur(12px);
+}
+
+input:autofill {
+  background-color: rgba(235, 155, 6, 0.199) !important;
+  backdrop-filter: blur(12px);
+}
+
+input:-webkit-autofill{
+  background-color: rgba(235, 155, 6, 0.199) !important;
+  backdrop-filter: blur(12px);
+}
+
+.form-select {
+  background-color: rgba(114, 106, 91, 0.199) !important;
+  backdrop-filter: blur(12px);
+}
+
 .custom-card {
   display: flex;
   flex-direction: column;
