@@ -12,11 +12,42 @@
 }
 
 .btn-primary {
-  --bs-btn-color: #fff;
-  --bs-btn-bg: #F35B04;
-  --bs-btn-border-color: #0d6efd;
-  --bs-btn-hover-color: #fff;
-  --bs-btn-hover-bg: #0b5ed7;
+  --bs-btn-color: #d3ced4;
+  /* --bs-btn-bg: #F35B04; */
+  /* --bs-btn-bg: rgba(244, 139, 123, 0.3); */
+  --bs-btn-bg: rgba(109, 104, 104, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  --bs-btn-border-color: transparent;
+  --bs-btn-hover-color: rgb(254, 217, 183);
+  --bs-btn-hover-bg: rgba(118, 120, 237, 0.3);
+  /* --bs-btn-hover-bg: rgba(0, 152, 176, 0.3); */
+  --bs-btn-hover-border-color: transparent;
+  --bs-btn-active-color: rgb(254, 217, 183);
+  --bs-btn-active-bg: rgba(118, 120, 237, 0.3);
+  /* --bs-btn-active-bg: rgba(0, 152, 176, 0.3); */
+  --bs-btn-active-border-color: transparent;
+  /* --bs-btn-active-shadow: 0 0 5px red !important; */
+}
+
+/* .btn-primary, .btn-primary:hover, .btn-primary:focus {
+  box-shadow: 0 0 5px linear-gradient(60deg, #7678ED, #F7B801);
+} */
+
+.btn-primary:active {
+  box-shadow: 0 0 15px rgb(254, 217, 183);
+}
+
+.toast {
+  --bs-toast-bg: rgba(109, 104, 104, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.toast-header {
+  background-color: rgba(109, 104, 104, 0.3);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
 }
 
 button {
@@ -70,7 +101,7 @@ i {
 }
 
 .red-test {
-  background-color: red;
+  background-color: transparent;
   z-index: 5;
   /* height: fit-content;
   width: fit-content; */

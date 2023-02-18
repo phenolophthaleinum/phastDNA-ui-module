@@ -2,15 +2,20 @@ var param_btn = document.getElementById('offcanvas-params-btn');
 var run_pred_btn = document.getElementById('post-predict-button');
 var run_train_btn = document.getElementById('post-train-button');
 var setup = document.getElementById('current-setup');
-var threads_slider = document.getElementById('predict-fastdna-threads');
+var threads_slider_predict = document.getElementById('predict-fastdna-threads');
+var threads_slider_train = document.getElementById('train-fastdna-threads');
 var minn_slider = document.getElementById('train-training-minn');
 var maxn_slider = document.getElementById('train-training-maxn');
-threads_slider.max = window.navigator.hardwareConcurrency;
-var threads_num = document.getElementById('threads-num');
+var max_threads = window.navigator.hardwareConcurrency;
+threads_slider_predict.max = max_threads;
+threads_slider_train.max = max_threads;
+var threads_num_predict = document.getElementById('predict-threads-num');
+var threads_num_train = document.getElementById('train-threads-num');
 var minn_num = document.getElementById('minn-num');
 var maxn_num = document.getElementById('maxn-num');
-threads_num.innerText = threads_slider.value;
-console.log(threads_num);
+threads_num_predict.innerText = threads_slider_predict.value;
+threads_num_train.innerText = threads_slider_train.value;
+// console.log(threads_num);
 var predict_form = document.getElementById('predict-form');
 console.log(predict_form);
 var train_form = document.getElementById('train-form');
@@ -156,13 +161,13 @@ param_btn.addEventListener('mouseleave', (e) => {
 run_train_btn.addEventListener('mouseenter', () => {
   console.log(run_train_btn.getBoundingClientRect())
   var targetOffset = run_train_btn.getBoundingClientRect().width;
-  gsap.to('.btn-label', .5, {
+  gsap.to('.btn-label', .3, {
     // transformOrigin: "center center",
     left: targetOffset,
     ease: "power1.inOut",
     force3D: true,
   });
-  gsap.to('#train-btn-icon', .5, {
+  gsap.to('#train-btn-icon', .3, {
     // transformOrigin: "center center",
     // x: 8,
     left: '50%',
@@ -174,14 +179,14 @@ run_train_btn.addEventListener('mouseenter', () => {
 run_train_btn.addEventListener('mouseleave', () => {
   // console.log('train button enter')
   var targetOffset = run_train_btn.getBoundingClientRect().width;
-  gsap.to('.btn-label', .5, {
+  gsap.to('.btn-label', .3, {
     // transformOrigin: "center center",
     // x: -8,
     left: 0,
     ease: "power1.inOut",
     force3D: true,
   });
-  gsap.to('#train-btn-icon', .5, {
+  gsap.to('#train-btn-icon', .3, {
     // transformOrigin: "center center",
     // x: -targetOffset,
     left: -targetOffset,
@@ -316,8 +321,12 @@ window.onload = function () {
 // //   event.relatedTarget // previous active tab
 // })
 
-threads_slider.addEventListener('input', (e) => {
-  threads_num.textContent = e.target.value;
+threads_slider_predict.addEventListener('input', (e) => {
+  threads_num_predict.textContent = e.target.value;
+})
+
+threads_slider_train.addEventListener('input', (e) => {
+  threads_num_train.textContent = e.target.value;
 })
 
 minn_slider.addEventListener('input', (e) => {
