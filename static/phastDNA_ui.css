@@ -244,7 +244,12 @@ main {
 .glass {
   /* background-color: rgba(255, 255, 255, 0.1); */
   /* background-color: rgba(247, 186, 1, 0.199); */
-  background-color: rgba(204, 194, 164, 0.199);
+  background-color: rgba(109, 104, 104, 0.3);
+  box-shadow: 0 8px 32px 0 radial-gradient(90% 100% at calc(50% + var(--x)) calc(0% + var(--y)), #7678ED, #F35B04),
+  radial-gradient(100% 100% at calc(80% - var(--x)) calc(0% - var(--y)), #7678ED, #F18701),
+  radial-gradient(150% 210% at calc(100% + var(--x)) calc(0% + var(--y)), #7678ED, #F18701),
+  radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), #7678ED, #F7B801),
+  linear-gradient(60deg, #7678ED, #F7B801);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
   border-radius: 1%;
@@ -253,17 +258,21 @@ main {
 .nav .active {
   background-color: rgba(204, 194, 164, 0.199) !important;
   backdrop-filter: blur(12px);
-  color: #f07167 !important;
+  color: #0098b0 !important;
 }
 
 .nav-link {
-  color: #40c3c2 !important;
+  color: #f07167;
+}
+
+.nav-link:hover {
+  color: rgb(254, 217, 183);
 }
 
 .form-control {
   background-color: rgba(114, 106, 91, 0.199) !important;
   backdrop-filter: blur(12px);
-  color: #d3ced4;
+  color: #d3ced4 !important;
 }
 
 .form-control.is-valid {
@@ -289,6 +298,32 @@ input:-webkit-autofill{
 .form-select {
   background-color: rgba(114, 106, 91, 0.199) !important;
   backdrop-filter: blur(12px);
+  color: #d3ced4;
+}
+
+option {
+  background-color: rgba(36, 35, 34, 0.199) !important;
+  backdrop-filter: blur(12px);
+  color: #313031;
+}
+
+.glass-card {
+  background-color: rgba(244, 139, 123, 0.3);
+  /* box-shadow: 0 8px 32px 0 radial-gradient(90% 100% at calc(50% + var(--x)) calc(0% + var(--y)), #7678ED, #F35B04),
+  radial-gradient(100% 100% at calc(80% - var(--x)) calc(0% - var(--y)), #7678ED, #F18701),
+  radial-gradient(150% 210% at calc(100% + var(--x)) calc(0% + var(--y)), #7678ED, #F18701),
+  radial-gradient(100% 100% at calc(100% - var(--x)) calc(30% - var(--y)), #7678ED, #F7B801),
+  linear-gradient(60deg, #7678ED, #F7B801); */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.info-icon {
+  color: #f48b7b;
+}
+
+.info-icon:hover {
+  color: rgb(254, 217, 183);
 }
 
 .custom-card {
@@ -327,6 +362,58 @@ input:-webkit-autofill{
 
 .flavor-5 {
   color: #40c3c2;
+}
+
+.flavor-visibility {
+  color: #d3ced4;
+}
+
+.list-group {
+  --bs-list-group-border-color: #8b898b;
+}
+
+.list-group-flush {
+  border-radius: 6px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 15px;
+  border-radius: 5px;  
+  /* background: #d3d3d3; */
+  background-color: rgba(114, 106, 91, 0.199) !important;
+  backdrop-filter: blur(12px);
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1; /* Fully shown on mouse-over */
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%; 
+  background: rgb(254, 217, 183);
+  cursor: pointer;
+}
+
+.slider:hover:-webkit-slider-thumb {
+  background: #67f0bb;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  background: rgb(254, 217, 183);
+  cursor: pointer;
 }
 
 .dynamic-break {
@@ -414,9 +501,10 @@ i.btn-icon {
 .accordion-button {
   /* color: rgb(36, 24, 24); */
   color: #f07167;
-  font-size: 125%;
+  font-size: 135%;
   background-color: transparent;
   width: 100%;
+  transition: 0.5s;
 }
 
 .accordion-button:hover {
@@ -437,9 +525,10 @@ i.btn-icon {
 
 .accordion-button:not(.collapsed) {
   color: #0098b0;
-  font-size: 125%;
+  font-size: 155%;
   background-color: transparent;
   box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.125);
+  transition: 0.5s;
 }
 
 .accordion-button:focus {

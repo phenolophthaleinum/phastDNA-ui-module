@@ -65,11 +65,12 @@ param_btn.onclick = function () {
       // var entry = document.createElement('h6');
       // entry.innerText = `${val}: ${elem_value}`;
       var entry = document.createElement('div')
-      entry.className = 'list-group-item';
+      // entry.className = 'list-group-item';
+      entry.classList.add('list-group-item', 'glass');
       entry.innerHTML = `<div class="d-flex w-100 justify-content-between">
-                            <h5 class="mb-1">${val}</h5>
+                            <h5 class="mb-1 flavor-5">${val}</h5>
                           </div>
-                          <p class="mb-1 dynamic-break">${elem_value}</p>`;
+                          <p class="mb-1 dynamic-break flavor-visibility">${elem_value}</p>`;
       setup.appendChild(entry);
     }
     else {

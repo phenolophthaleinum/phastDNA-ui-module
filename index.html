@@ -147,12 +147,12 @@
                                                                     data-bs-target="#predict-outputInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="predict-outputInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1"
                                                                 id="predict-outputInfo">
-                                                                <div class="card card-body" id="predict-outputInfoText">
+                                                                <div class="glass-card flavor-visibility card card-body" id="predict-outputInfoText">
                                                                     Path to directory with result files.
                                                                 </div>
                                                             </div>
@@ -175,12 +175,12 @@
                                                                     data-bs-target="#predict-classifierInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="predict-classifierInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1"
                                                                 id="predict-classifierInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Path to pre-trained phastDNA classifier.
                                                                 </div>
                                                             </div>
@@ -203,12 +203,12 @@
                                                                     data-bs-target="#predict-virusInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="predict-virusInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1"
                                                                 id="predict-virusInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Path to directory with viral genomes.
                                                                 </div>
                                                             </div>
@@ -236,11 +236,12 @@
                                             aria-labelledby="predict-headingSettingsFastdna"
                                             data-bs-parent="#accordionPredict">
                                             <div class="accordion-body">
-                                                <div class="glass p-5 mb-4 rounded-3" style="background-image:linear-gradient(
+                                                <div class="glass p-5 mb-4 rounded-3">
+                                                <!-- style="background-image:linear-gradient(
                                     rgba(0, 0, 0, 0.35), 
                                     rgba(0, 0, 0, 0.35)); 
                                   background-position: center;
-                                  background-size: cover;">
+                                  background-size: cover;"> -->
                                                     <div class="container-fluid">
                                                         <div class="d-flex align-content-between flex-wrap flex-column">
                                                             <p class="flavor-7 mt-auto col-md-8 fs-6"> Settings related
@@ -255,12 +256,12 @@
                                                                     data-bs-target="#predict-fastdnaInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="predict-fastdnaInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <!-- info content -->
-                                                            <div class="collapse mb-3" id="predict-fastdnaInfo">
-                                                                <div class="card card-body">
+                                                            <div class="collapse glass mb-3" id="predict-fastdnaInfo">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Path to fastDNA executables.
                                                                     <div class="alert alert-warning d-flex align-items-center mt-3"
                                                                         role="alert">
@@ -289,11 +290,11 @@
                                                                 data-bs-target="#predict-threadsInfo"
                                                                 aria-expanded="false"
                                                                 aria-controls="predict-threadsInfo">
-                                                                <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                             </button>
                                                         </div>
                                                         <div class="collapse mb-3" id="predict-threadsInfo">
-                                                            <div class="card card-body">
+                                                            <div class="glass-card flavor-visibility card card-body">
                                                                 Number of processor threads to be used by phastDNA.
                                                             </div>
                                                         </div>
@@ -302,7 +303,7 @@
                                                                 <h4 id="threads-num" class="flavor-5">4</h4>
                                                             </div>
                                                             <div class="col-sm-11 pt-1">
-                                                                <input type="range" class="form-range" min="1" max="5"
+                                                                <input type="range" class="slider" min="1" max="5"
                                                                     step="1" id="predict-fastdna-threads"
                                                                     name="threads">
                                                             </div>
@@ -326,11 +327,12 @@
                                             aria-labelledby="predict-headingSettingsPrediction"
                                             data-bs-parent="#accordionPredict">
                                             <div class="accordion-body">
-                                                <div class="glass p-5 mb-4 rounded-3" style="background-image:linear-gradient(
+                                                <div class="glass p-5 mb-4 rounded-3">
+                                                    <!-- style="background-image:linear-gradient(
                                     rgba(0, 0, 0, 0.35), 
                                     rgba(0, 0, 0, 0.35)); 
                                   background-position: center;
-                                  background-size: cover;">
+                                  background-size: cover;"> -->
                                                     <!-- <form action="/" method="post" class="was-validated"> -->
                                                     <!-- <button type="submit" class="btn btn-primary">Post</button> -->
                                                     <div class="container-fluid">
@@ -347,12 +349,12 @@
                                                                     data-bs-target="#predict-hitsInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="predict-hitsInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1"
                                                                 id="predict-hitsInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Maximum number of host hits to include in fastDNA
                                                                     prediction step.
                                                                 </div>
@@ -394,11 +396,12 @@
                                             aria-labelledby="train-headingSettingsPath"
                                             data-bs-parent="#accordionTrain">
                                             <div class="accordion-body">
-                                                <div class="glass p-5 mb-4 rounded-3" style="background-image:linear-gradient(
+                                                <div class="glass p-5 mb-4 rounded-3">
+                                                 <!-- style="background-image:linear-gradient(
                                     rgba(0, 0, 0, 0.35), 
                                     rgba(0, 0, 0, 0.35)); 
                                   background-position: center;
-                                  background-size: cover;">
+                                  background-size: cover;"> -->
                                                     <div class="container-fluid">
                                                         <div class="d-flex align-content-between flex-wrap flex-column">
                                                             <p class="flavor-7 mt-auto col-md-8 fs-6">Settings related
@@ -417,12 +420,12 @@
                                                                     data-bs-target="#train-outputInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-outputInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1"
                                                                 id="train-outputInfo">
-                                                                <div class="card card-body" id="train-outputInfoText">
+                                                                <div class="glass-card flavor-visibility card card-body" id="train-outputInfoText">
                                                                     Path to directory with result files.
                                                                 </div>
                                                             </div>
@@ -444,11 +447,11 @@
                                                                     data-bs-target="#train-hostInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-hostInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-hostInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Path to directory with host genomes.
                                                                 </div>
                                                             </div>
@@ -469,11 +472,11 @@
                                                                     data-bs-target="#train-virusInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-virusInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-virusInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Path to directory with viral genomes.
                                                                 </div>
                                                             </div>
@@ -500,11 +503,12 @@
                                             aria-labelledby="train-headingSettingsFastdna"
                                             data-bs-parent="#accordionTrain">
                                             <div class="accordion-body">
-                                                <div class="glass p-5 mb-4 rounded-3" style="background-image:linear-gradient(
-                                    rgba(0, 0, 0, 0.35), 
-                                    rgba(0, 0, 0, 0.35)); 
+                                                <div class="glass p-5 mb-4 rounded-3">
+                                                 <!-- style="background-image:linear-gradient(
+                                    rgba(0, 0, 0, 0.15), 
+                                    rgba(0, 0, 0, 0.15)); 
                                   background-position: center;
-                                  background-size: cover;">
+                                  background-size: cover;"> -->
                                                     <div class="container-fluid">
                                                         <div class="d-flex align-content-between flex-wrap flex-column">
                                                             <p class="flavor-7 mt-auto col-md-8 fs-6"> Settings related
@@ -519,12 +523,12 @@
                                                                     data-bs-target="#train-fastdnaInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-fastdnaInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <!-- info content -->
                                                             <div class="collapse mb-3" id="train-fastdnaInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Path to fastDNA executables.
                                                                     <div class="alert alert-warning d-flex align-items-center mt-3"
                                                                         role="alert">
@@ -552,11 +556,11 @@
                                                                 data-bs-toggle="collapse"
                                                                 data-bs-target="#train-threadsInfo"
                                                                 aria-expanded="false" aria-controls="train-threadsInfo">
-                                                                <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                             </button>
                                                         </div>
                                                         <div class="collapse mb-3" id="train-threadsInfo">
-                                                            <div class="card card-body">
+                                                            <div class="glass-card flavor-visibility card card-body">
                                                                 Number of processor threads to be used by phastDNA.
                                                             </div>
                                                         </div>
@@ -565,7 +569,7 @@
                                                                 <h4 id="threads-num" class="flavor-5">4</h4>
                                                             </div>
                                                             <div class="col-sm-11 pt-1">
-                                                                <input type="range" class="form-range" min="1" max="5"
+                                                                <input type="range" class="slider" min="1" max="5"
                                                                     step="1" id="train-fastdna-threads" name="threads">
                                                             </div>
                                                         </div>
@@ -587,11 +591,12 @@
                                             aria-labelledby="train-headingSettingsTraining"
                                             data-bs-parent="#accordionTrain">
                                             <div class="accordion-body">
-                                                <div class="glass p-5 mb-4 rounded-3" style="background-image:linear-gradient(
+                                                <div class="glass p-5 mb-4 rounded-3">
+                                                 <!-- style="background-image:linear-gradient(
                                     rgba(0, 0, 0, 0.35), 
                                     rgba(0, 0, 0, 0.35)); 
                                   background-position: center;
-                                  background-size: cover;">
+                                  background-size: cover;"> -->
                                                     <!-- <form action="/" method="post" class="was-validated"> -->
                                                     <!-- <button type="submit" class="btn btn-primary">Post</button> -->
                                                     <div class="container-fluid">
@@ -608,11 +613,11 @@
                                                                     data-bs-toggle="collapse"
                                                                     data-bs-target="#train-dimInfo"
                                                                     aria-expanded="false" aria-controls="train-dimInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-dimInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Dimensionality (size) of k-mer embedding.
                                                                     <div class="alert alert-warning d-flex align-items-center mt-3"
                                                                         role="alert">
@@ -641,11 +646,11 @@
                                                                     data-bs-target="#train-minnInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-minnInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-minnInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Minimum k-mer size that is used to create n-grams.
                                                                     <div class="alert alert-warning d-flex align-items-center mt-3"
                                                                         role="alert">
@@ -665,7 +670,7 @@
                                                                 </div>
                                                                 <div class="col-sm-11 pt-1">
                                                                     <input type="range" value="7" min="1" max="15"
-                                                                        step="1" class="form-range"
+                                                                        step="1" class="slider"
                                                                         id="train-training-minn"
                                                                         aria-describedby="emailHelp" name="minn"
                                                                         required>
@@ -683,11 +688,11 @@
                                                                     data-bs-target="#train-maxnInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-maxnInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-maxnInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Maximum k-mer size that is used to create n-grams.
                                                                     <div class="alert alert-warning d-flex align-items-center mt-3"
                                                                         role="alert">
@@ -707,7 +712,7 @@
                                                                 </div>
                                                                 <div class="col-sm-11 pt-1">
                                                                     <input type="range" value="8" min="1" max="15"
-                                                                        step="1" class="form-range"
+                                                                        step="1" class="slider"
                                                                         id="train-training-maxn"
                                                                         aria-describedby="emailHelp" name="maxn"
                                                                         required>
@@ -725,12 +730,12 @@
                                                                     data-bs-target="#train-readlenInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-readlenInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1"
                                                                 id="train-readlenInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Length of sampled reads from sequences.
                                                                 </div>
                                                             </div>
@@ -750,12 +755,12 @@
                                                                     data-bs-target="#train-readnumInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-readnumInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1"
                                                                 id="train-readnumInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Number of sampled reads from sequences.
                                                                     <div class="alert alert-warning d-flex align-items-center mt-3"
                                                                         role="alert">
@@ -783,11 +788,11 @@
                                                                     data-bs-toggle="collapse"
                                                                     data-bs-target="#train-lrInfo" aria-expanded="false"
                                                                     aria-controls="train-lrInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-lrInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Training learning rate.
                                                                 </div>
                                                             </div>
@@ -807,11 +812,11 @@
                                                                     data-bs-toggle="collapse"
                                                                     data-bs-target="#train-ulrInfo"
                                                                     aria-expanded="false" aria-controls="train-ulrInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-ulrInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Update dynamics of the the learning rate.
                                                                 </div>
                                                             </div>
@@ -831,11 +836,11 @@
                                                                     data-bs-target="#train-epochInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-epochInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-epochInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Number of epochs - how many times the trained model
                                                                     will be presented with each word.
                                                                     <div class="alert alert-warning d-flex align-items-center mt-3"
@@ -865,11 +870,11 @@
                                                                     data-bs-target="#train-lossInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-lossInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-lossInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Loss function used for training.
                                                                 </div>
                                                             </div>
@@ -923,12 +928,12 @@
                                                                     data-bs-target="#train-preiterInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-preiterInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1"
                                                                 id="train-preiterInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Number of pre-iterations for Bayesian optimisation
                                                                     of hyper-parameters.
                                                                 </div>
@@ -948,11 +953,11 @@
                                                                     data-bs-target="#train-iterInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-iterInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-iterInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Number of iterations of Bayesian optimisation of
                                                                     hyper-parameters.
                                                                 </div>
@@ -972,11 +977,11 @@
                                                                     data-bs-target="#train-hitsInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-hitsInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-hitsInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Maximum number of host hits to include in fastDNA
                                                                     prediction step.
                                                                 </div>
@@ -996,12 +1001,12 @@
                                                                     data-bs-target="#train-filterInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-filterInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1"
                                                                 id="train-filterInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Genomes filtering based on taxonomy level. Choosing
                                                                     'None' implies no taxonomy filtering.
                                                                 </div>
@@ -1030,11 +1035,11 @@
                                                                     data-bs-target="#train-repsInfo"
                                                                     aria-expanded="false"
                                                                     aria-controls="train-repsInfo">
-                                                                    <i class="bi bi-info-circle-fill btn btn-icon"></i>
+                                                                    <i class="bi bi-info-circle-fill btn btn-icon info-icon"></i>
                                                                 </button>
                                                             </div>
                                                             <div class="collapse mb-3 flex-grow-1" id="train-repsInfo">
-                                                                <div class="card card-body">
+                                                                <div class="glass-card flavor-visibility card card-body">
                                                                     Maximum number of representatives from the filtered
                                                                     group.
                                                                 </div>
@@ -1137,7 +1142,7 @@
                         </div>
                         <div class="offcanvas-body flavor-2">
                             <!-- <div id="current-setup"></div> -->
-                            <div class="list-group" id="current-setup">
+                            <div class="list-group list-group-flush" id="current-setup">
                                 <!-- <div class="list-group-item">
                                         <h5 class="mb-1">List group item heading</h5>
                                         <p class="mb-1">Some placeholder content in a paragraph.</p>
