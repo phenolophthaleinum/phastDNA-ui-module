@@ -110,19 +110,9 @@ var interval = setInterval(function() {
       // atest.innerText = response['content'];
       console.log(response['content']);
       var para = document.createElement("p");
-      // para.classList.add('fade-in');
-      var i = 0;
-      var speed = 50;
-      function typeWriter() {
-        if (i < txt.length) {
-          atest.innerHTML += response['content'].charAt(i);
-          i++;
-          setTimeout(typeWriter, speed);
-        }
-      }
-      typeWriter();
-      // atest.appendChild(para);
-      // para.innerText = response['content'];
+      para.innerText = response['content'];
+      para.classList.add('fade-in');
+      atest.appendChild(para);
       // atest.innerHTML += `<p>${response['content']}</p><br>`;
 
     },
