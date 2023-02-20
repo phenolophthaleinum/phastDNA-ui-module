@@ -37,13 +37,28 @@ def test_f():
         print(data)
         return flask.render_template('task.html', task_name=task_name)
         # return subprocess.check_output(['ping', 'google.com', '-t'])
-
+ptr = 0
 @app.route("/test/<id>")
 def get_status(id):
+    global ptr
     status = 1
     with open(f"{id}.log", "r+b") as f:
         mm = mmap.mmap(f.fileno(), 0)
-        logs = str(mm[::], 'utf-8')
+        if ptr == 0:
+            logs = str(mm[::], 'utf-8')
+            ptr = len(mm)
+            # print(logs)
+            return flask.jsonify({'content': logs, 'status': status})
+        logs = str(mm[ptr:], 'utf-8')
+        ptr = len(mm)
+        # print(logs)
+        # print(len(mm))
+        # print(str(mm[5:15], 'utf-8'))
+        # print(str(mm[ptr - 5:ptr]))
+        # mm.seek(0, 2)
+        # ptr = mm.tell()
+        # print(str(mm[ptr - 1], 'utf-8'))
+        # logs = str(mm[::], 'utf-8')
         # print(logs[-20:].find('finished'))
         if 'finished' in logs[-50:]:
             status = 0
