@@ -256,6 +256,11 @@ function test() {
 //         console.log("not home");
 //     }
 // }
+
+gsap.set(".btn-primary", {
+  y: 60,
+});
+
 function hideParamButton() {
   param_btn.style.display = "none";
 }
@@ -263,9 +268,12 @@ function hideParamButton() {
 function hideRunButton() {
   run_btn.style.display = "none";
 }
-// function showButton(){
-//   param_btn.style.display = "block";
-// }
+function showButton(){
+  param_btn.style.display = "block";
+  // run_pred_btn.disabled = false;
+  // run_train_btn.disabled = false;
+  // param_btn.disabled = false;
+}
 
 window.onload = function () {
   var tabEl = document.querySelectorAll('button[data-bs-toggle="pill"]')
@@ -291,6 +299,9 @@ window.onload = function () {
             ease: "power1.inOut",
             onComplete: function () {
               this.targets()[0].style.display = "none";
+              // run_pred_btn.disabled = true;
+              // run_train_btn.disabled = true;
+              // param_btn.disabled = true;
             }
           },
           // onComplete: hideRunButton,
@@ -300,18 +311,22 @@ window.onload = function () {
       }
       else {
         if (event.target.id === 'pills-predict-tab') {
-          param_btn.style.display = "block";
+          // param_btn.style.display = "block";
           run_pred_btn.style.display = "block";
           run_train_btn.style.display = "none";
+          // run_pred_btn.disabled = false;
+          // param_btn.disabled = false;
           currentTab = 'pills-predict-tab';
           // run_btn.form = predict_form;
           // document.getElementById("post-button").form = document.getElementById("predict-form");
           // console.log(document.getElementById("post-button").form);
         }
         if (event.target.id === 'pills-train-tab') {
-          param_btn.style.display = "block";
+          // param_btn.style.display = "block";
           run_train_btn.style.display = "block";
           run_pred_btn.style.display = "none";
+          // run_train_btn.disabled = false;
+          // param_btn.disabled = false;
           currentTab = 'pills-train-tab';
           // document.getElementById("post-button").form = document.getElementById("train-form");
           // console.log(document.getElementById("post-button").form);
@@ -323,7 +338,9 @@ window.onload = function () {
         //   ease: "power1.inOut",
         //   force3D: true,
         // })
+        
         gsap.to(".btn-primary", {
+          onStart: showButton,
           y: 0,
           opacity: 1,
           duration: 0.2,
@@ -336,6 +353,7 @@ window.onload = function () {
             // }
           },
         })
+
         // if (event.target.id === 'pills-predict-tab') {
 
         //   // run_btn.form = predict_form;
