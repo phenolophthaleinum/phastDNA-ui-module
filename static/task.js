@@ -29,7 +29,6 @@ var interval = setInterval(function() {
     url: `/test/${task_name}`,
     type: 'GET',
     success: function(response) {
-      // atest.innerHTML += `<p>${response}</p>`;
       if (response['status'] === 0){
         gsap.to(".icon", {
           rotation: 0,
@@ -108,7 +107,23 @@ var interval = setInterval(function() {
         document.title = "phastDNA: task successful"
         clearInterval(interval);
       }
-      atest.innerText = response['content'];
+      // atest.innerText = response['content'];
+      console.log(response['content']);
+      var para = document.createElement("p");
+      // para.classList.add('fade-in');
+      var i = 0;
+      var speed = 50;
+      function typeWriter() {
+        if (i < txt.length) {
+          atest.innerHTML += response['content'].charAt(i);
+          i++;
+          setTimeout(typeWriter, speed);
+        }
+      }
+      typeWriter();
+      // atest.appendChild(para);
+      // para.innerText = response['content'];
+      // atest.innerHTML += `<p>${response['content']}</p><br>`;
 
     },
     error: function(xhr) {
