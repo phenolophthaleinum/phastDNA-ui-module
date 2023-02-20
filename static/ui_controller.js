@@ -82,7 +82,7 @@ param_btn.onclick = function () {
       continue;
     }
   }
-  if (setup.innerHTML === ''){
+  if (setup.innerHTML === '') {
     setup.innerHTML = `<h5>No parameters has been set.</h5>`;
   }
   // output = document.getElementById('input-path-output').value
@@ -103,10 +103,10 @@ param_btn.onclick = function () {
 //   opacity: 0
 // })
 
-gsap.set("#train-btn-icon", {
-  // display: 'none',
-  left: -1000
-})
+// gsap.set(".red-test", {
+//   // display: 'none',
+//   left: -1000
+// })
 
 // var btn_icon_anim = gsap.to("#offcanvas-params-btn-icon", .2, {
 //   display: 'inline',
@@ -124,7 +124,7 @@ param_btn.addEventListener('mouseover', (e) => {
     // transform: 'scale(1)',
     opacity: 1,
     fontSize: 18,
-    force3D: true,
+    // force3D: true,
     ease: "power1.inOut",
   });
   // gsap.to("#offcanvas-params-btn", .2, {
@@ -147,7 +147,7 @@ param_btn.addEventListener('mouseleave', (e) => {
   gsap.to("#offcanvas-params-btn-icon", .2, {
     opacity: 0,
     fontSize: 0,
-    force3D: true,
+    // force3D: true,
     ease: "power1.inOut",
   });
   // gsap.to("#offcanvas-params-btn-icon", .25, {
@@ -158,42 +158,85 @@ param_btn.addEventListener('mouseleave', (e) => {
   // console.log(param_btn.style.width);
 });
 
-run_train_btn.addEventListener('mouseenter', () => {
-  console.log(run_train_btn.getBoundingClientRect())
-  var targetOffset = run_train_btn.getBoundingClientRect().width;
-  gsap.to('.btn-label', .3, {
-    // transformOrigin: "center center",
-    left: targetOffset,
-    ease: "power1.inOut",
-    force3D: true,
-  });
-  gsap.to('#train-btn-icon', .3, {
-    // transformOrigin: "center center",
-    // x: 8,
-    left: '50%',
-    ease: "power1.inOut",
-    force3D: true,
-  });
-})
+// run_train_btn.addEventListener('mouseenter', () => {
+//   console.log(run_train_btn.getBoundingClientRect())
+//   var targetOffset = run_train_btn.getBoundingClientRect().width;
+//   gsap.to('.btn-label', .3, {
+//     // transformOrigin: "center center",
+//     left: targetOffset,
+//     ease: "power1.inOut",
+//     force3D: true,
+//   });
+//   gsap.to('.red-test', .3, {
+//     // transformOrigin: "center center",
+//     // x: 8,
+//     left: '50%',
+//     ease: "power1.inOut",
+//     force3D: true,
+//   });
+// })
 
-run_train_btn.addEventListener('mouseleave', () => {
-  // console.log('train button enter')
-  var targetOffset = run_train_btn.getBoundingClientRect().width;
-  gsap.to('.btn-label', .3, {
-    // transformOrigin: "center center",
-    // x: -8,
-    left: 0,
-    ease: "power1.inOut",
-    force3D: true,
+// run_train_btn.addEventListener('mouseleave', () => {
+//   // console.log('train button enter')
+//   var targetOffset = run_train_btn.getBoundingClientRect().width;
+//   gsap.to('.btn-label', .3, {
+//     // transformOrigin: "center center",
+//     // x: -8,
+//     left: 0,
+//     ease: "power1.inOut",
+//     force3D: true,
+//   });
+//   gsap.to('.red-test', .3, {
+//     // transformOrigin: "center center",
+//     // x: -targetOffset,
+//     left: -targetOffset,
+//     ease: "power1.inOut",
+//     force3D: true,
+//   });
+// })
+
+
+Array.from(document.querySelectorAll(".run-btn")).forEach(btn => {
+  gsap.set(".red-test", {
+    // display: 'none',
+    left: -1000,
+
+  })
+  btn.addEventListener('mouseenter', () => {
+    var targetOffset = btn.getBoundingClientRect().width;
+    gsap.to('.btn-label', .3, {
+      // transformOrigin: "center center",
+      left: targetOffset,
+      ease: "power1.inOut",
+      // force3D: true,
+    });
+    gsap.to('.red-test', .3, {
+      // transformOrigin: "center center",
+      // x: 8,
+      left: '50%',
+      ease: "power1.inOut",
+      // force3D: true,
+    });
   });
-  gsap.to('#train-btn-icon', .3, {
-    // transformOrigin: "center center",
-    // x: -targetOffset,
-    left: -targetOffset,
-    ease: "power1.inOut",
-    force3D: true,
+  btn.addEventListener('mouseleave', () => {
+    // console.log('train button enter')
+    var targetOffset = btn.getBoundingClientRect().width;
+    gsap.to('.btn-label', .3, {
+      // transformOrigin: "center center",
+      // x: -8,
+      left: 0,
+      ease: "power1.inOut",
+      // force3D: true,
+    });
+    gsap.to('.red-test', .3, {
+      // transformOrigin: "center center",
+      // x: -targetOffset,
+      left: -targetOffset,
+      ease: "power1.inOut",
+      // force3D: true,
+    });
   });
-})
+});
 
 
 
@@ -648,9 +691,9 @@ Array.from(document.querySelectorAll(".run-btn")).forEach(btn => {
 //   setInterval("ajaxd()", 5000); // call every 10 seconds
 // });
 
-// function ajaxd() { 
+// function ajaxd() {
 //   //reload result into element with id "sysStatus"
-//   console.log("/test"); 
+//   console.log("/test");
 // };
 
 // var atest = document.getElementById("ajax-test");
@@ -666,3 +709,12 @@ Array.from(document.querySelectorAll(".run-btn")).forEach(btn => {
 //     }
 //   });
 // }, 5000);
+
+
+// ====== potential dropdown arrow Animation, not very good though
+
+// Array.from(document.querySelectorAll(".form-select")).forEach(select => {
+//   select.addEventListener('click', () => {
+//     select.classList.contains('selectdropdown-active') ? select.classList.remove('selectdropdown-active') : select.classList.add('selectdropdown-active');
+//   })
+// })
