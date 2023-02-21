@@ -108,11 +108,24 @@ var interval = setInterval(function() {
         clearInterval(interval);
       }
       // atest.innerText = response['content'];
-      console.log(response['content']);
-      var para = document.createElement("p");
-      para.innerText = response['content'];
-      para.classList.add('fade-in');
-      atest.appendChild(para);
+      if (response['status'] === 0){
+        var normalPara = document.createElement("p");
+        var successPara = document.createElement("p");
+        successPara.classList.add("fade-in", "status-success");
+        normalPara.classList.add("fade-in");
+        response_split = response['content'].split('\n');
+        successPara.innerText = response_split.at(-2);
+        normalPara.innerText = response_split.slice(0, -2).join('\n');
+        atest.appendChild(normalPara);
+        atest.appendChild(successPara);
+      }
+      else {
+        console.log(response['content']);
+        var para = document.createElement("p");
+        para.innerText = response['content'];
+        para.classList.add('fade-in');
+        atest.appendChild(para);
+      }
       // atest.innerHTML += `<p>${response['content']}</p><br>`;
 
     },
