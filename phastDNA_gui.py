@@ -8,7 +8,7 @@ import datetime
 app = flask.Flask(__name__, template_folder=".")
 
 current_task_file = ''
-ptr = 0
+ptrs = {}
 # tasks = {}
 
 @app.route('/')
@@ -44,7 +44,11 @@ def test_f():
 
 @app.route("/test/<id>")
 def get_status(id):
-    global ptr
+    # global ptr
+    print(ptrs)
+    if id not in ptrs:
+        ptrs[id] = 0
+    ptr = ptrs[id]
     status = 1
     with open(f"{id}.log", "r+b") as f:
         mm = mmap.mmap(f.fileno(), 0)
@@ -52,6 +56,7 @@ def get_status(id):
         if ptr == 0:
             logs = str(mm[::], 'utf-8')
             ptr = len(mm)
+            ptrs[id] = ptr
             return flask.jsonify({'content': logs, 'status': status})
 
         logs = str(mm[ptr:], 'utf-8')
@@ -59,6 +64,8 @@ def get_status(id):
         
         if 'finished' in logs[-50:]:
             status = 0
+            
+        ptrs[id] = ptr
     return flask.jsonify({'content': logs, 'status': status})
 
 

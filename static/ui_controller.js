@@ -61,6 +61,15 @@ tabs = {
   'pills-train-tab': "Train"
 }
 
+// check if loaded: probably unecessary
+// document.addEventListener("readystatechange", (event) => {
+//   if (event.target.readyState === "interactive") {
+//     console.log('loading-interactive');
+//   } else if (event.target.readyState === "complete") {
+//     console.log('done loading');
+//   }
+// });
+
 param_btn.onclick = function () {
   setup.innerHTML = '';
   for (const [key, val] of Object.entries(params[currentTab])) {
