@@ -854,3 +854,7 @@ i.btn-icon {
   .status-success {
     color:rgb(102, 227, 143);
   }
+
+  .status-error {
+    color:rgb(255, 0, 0);
+  }
