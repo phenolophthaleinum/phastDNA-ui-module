@@ -66,7 +66,7 @@ def get_status(id):
     status = 1
     with open(f"{id}.log", "r+b") as f:
         mm = mmap.mmap(f.fileno(), 0)
-
+        
         if ptr == 0:
             logs = str(mm[::], 'utf-8')
             ptr = len(mm)
@@ -76,13 +76,14 @@ def get_status(id):
         logs = str(mm[ptr:], 'utf-8')
         ptr = len(mm)
 
-        if 'finished' in logs[-50:]:
+        if 'finished' in logs:
             status = 0
 
-        if 'Traceback' in logs[::]:
+        if 'Traceback' in logs:
             status = -1
 
         ptrs[id] = ptr
+        # print(logs)
     return flask.jsonify({'content': logs, 'status': status})
 
 

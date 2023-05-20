@@ -4,11 +4,13 @@ import argparse
 import sys
 
 
+# function for overriding uncaught exceptions - sends to logging
 def my_exception_handler(exc_type, exc_value, exc_traceback):
     logging.exception("Uncaught exception", exc_info=(exc_type, exc_value, exc_traceback))
 
 
 def run(task_id):
+    # define logging properties; from now - every message should be a *log*
     logging.basicConfig(
                     filename=f'{task_id}.log',
                     filemode='a',
@@ -16,6 +18,7 @@ def run(task_id):
                     datefmt='%H:%M:%S',
                     level=logging.DEBUG)
     
+    # apply override for uncaught exceptions
     sys.excepthook = my_exception_handler
 
     logging.info(f"start {task_id}")
@@ -26,6 +29,7 @@ def run(task_id):
     for x in range(0, 100, 5):
         logging.info(f"training...{x}")
         time.sleep(0.5)
+        # exceptions for error handling in the app
         if x == 45:
             # raise Exception("sample exception")
             try:
@@ -34,7 +38,7 @@ def run(task_id):
             #     logging.exception("Error: -1")
                 raise TypeError
 
-    # time.sleep(12)
+    # word 'finished will signalise the sucessful run'
     logging.info(f"finished {task_id}")
 
 
